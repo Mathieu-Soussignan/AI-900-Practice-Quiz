@@ -297,13 +297,13 @@ else:
     # Header résultat
     if pct >= 80:
         st.balloons()
-        st.success(f"## 🎉 Excellent ! {score}/{total} — {pct}%")
+        st.success(f"## Excellent ! {score}/{total} — {pct}%")
         st.markdown("Tu es prêt(e) pour l'examen AI-900 ! Vise 80%+ en conditions réelles.")
     elif pct >= 60:
-        st.warning(f"## 💪 Pas mal ! {score}/{total} — {pct}%")
+        st.warning(f"## Pas mal ! {score}/{total} — {pct}%")
         st.markdown("Tu progresses bien. Encore un peu de révision sur les domaines faibles.")
     else:
-        st.error(f"## 📚 {score}/{total} — {pct}%")
+        st.error(f"## {score}/{total} — {pct}%")
         st.markdown("Continue à réviser, tu vas y arriver ! Cible les domaines en rouge ci-dessous.")
 
     st.divider()
