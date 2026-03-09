@@ -1,0 +1,2413 @@
+[
+  {
+    "id": 1,
+    "domain": "Vision",
+    "question": "Quelles deux fonctionnalités de charge de travail IA font partie du service Azure Vision dans Foundry Tools ?",
+    "choices": [
+      "Reconnaissance d'entités",
+      "Extraction de phrases clés",
+      "Reconnaissance optique de caractères (OCR)",
+      "Analyse spatiale"
+    ],
+    "answers": [
+      2,
+      3
+    ],
+    "explanation": "L'OCR et l'analyse spatiale font partie d'Azure AI Vision. La reconnaissance d'entités et l'extraction de phrases clés appartiennent à Azure AI Language (NLP).",
+    "ref": "Explorer la vision par ordinateur – Microsoft Learn"
+  },
+  {
+    "id": 2,
+    "domain": "Vision",
+    "question": "Vous devez créer une application qui identifie les logos de marques concurrentes sur des images de rayons de supermarché. Quel service Azure devez-vous utiliser ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure Custom Vision",
+      "Azure Face",
+      "Azure AI Speech"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Custom Vision vous permet d'entraîner un modèle personnalisé de classification d'images ou de détection d'objets avec vos propres images.",
+    "ref": "Custom Vision – Microsoft Learn"
+  },
+  {
+    "id": 3,
+    "domain": "Vision",
+    "question": "Vous voulez analyser un flux vidéo en direct dans un magasin pour compter les personnes et détecter les zones surpeuplées. Quelle fonctionnalité Azure Vision devez-vous utiliser ?",
+    "choices": [
+      "Classification d'images",
+      "OCR",
+      "Analyse spatiale",
+      "Détection de visages"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "L'analyse spatiale analyse les flux vidéo pour détecter la présence, le comptage, les mouvements et le temps de présence dans les zones en temps réel.",
+    "ref": "Analyse spatiale – Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 4,
+    "domain": "Vision",
+    "question": "Quel service Azure utiliseriez-vous pour extraire du texte d'une image de facture scannée ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure AI Vision (OCR)",
+      "Azure AI Speech",
+      "Azure Document Intelligence"
+    ],
+    "answers": [
+      1,
+      3
+    ],
+    "explanation": "Azure AI Vision OCR et Azure Document Intelligence permettent d'extraire du texte. Document Intelligence est optimisé pour les formulaires structurés.",
+    "ref": "OCR – Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 5,
+    "domain": "Vision",
+    "question": "Une entreprise souhaite détecter automatiquement si les équipements de protection (casques, gilets) sont portés sur un chantier via des caméras. Quel type de workload IA utiliser ?",
+    "choices": [
+      "NLP",
+      "Détection d'objets (Computer Vision)",
+      "Analyse de sentiment",
+      "Régression"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La détection d'objets est une fonctionnalité de Computer Vision qui permet d'identifier et localiser des objets spécifiques dans des images ou vidéos.",
+    "ref": "Détection d'objets – Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 6,
+    "domain": "Vision",
+    "question": "Quel service Azure permet d'entraîner un modèle de classification d'images avec très peu d'images (quelques dizaines) sans expertise ML approfondie ?",
+    "choices": [
+      "Azure Machine Learning",
+      "Azure Custom Vision",
+      "Azure AI Vision",
+      "Azure OpenAI"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Custom Vision est conçu pour créer rapidement des modèles de classification ou détection personnalisés avec peu de données, via une interface simple.",
+    "ref": "Custom Vision – Microsoft Learn"
+  },
+  {
+    "id": 7,
+    "domain": "Vision",
+    "question": "Quelles deux tâches Azure AI Vision peut-elle effectuer ? Chaque réponse correcte présente une solution complète.",
+    "choices": [
+      "Analyser le sentiment d'un texte",
+      "Décrire le contenu d'une image",
+      "Traduire un document",
+      "Détecter des visages dans une photo"
+    ],
+    "answers": [
+      1,
+      3
+    ],
+    "explanation": "Azure AI Vision peut décrire le contenu d'images (caption, tags) et détecter/analyser des visages. L'analyse de sentiment et la traduction relèvent d'Azure AI Language et Azure Translator.",
+    "ref": "Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 8,
+    "domain": "Vision",
+    "question": "Vous lisez du texte manuscrit dans des formulaires papier numérisés. Quelle fonctionnalité d'Azure AI Vision convient le mieux ?",
+    "choices": [
+      "Classification d'images",
+      "Analyse spatiale",
+      "Read API (OCR)",
+      "Reconnaissance faciale"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "La Read API d'Azure AI Vision est spécialement optimisée pour lire du texte imprimé et manuscrit dans des images et documents PDF.",
+    "ref": "Read API – Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 9,
+    "domain": "Vision",
+    "question": "Un hôpital utilise l'IA pour détecter des tumeurs dans des IRM. Quel type de workload IA cela représente-t-il ?",
+    "choices": [
+      "Traitement du langage naturel",
+      "Détection d'anomalies",
+      "Vision par ordinateur",
+      "IA conversationnelle"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "L'analyse d'images médicales pour détecter des anomalies est un workload de vision par ordinateur (classification d'images / détection d'objets).",
+    "ref": "Concepts de charge de travail IA – Microsoft Learn"
+  },
+  {
+    "id": 10,
+    "domain": "Vision",
+    "question": "Quel est le principal avantage d'Azure Document Intelligence (anciennement Form Recognizer) par rapport à une simple OCR ?",
+    "choices": [
+      "Il traduit automatiquement le texte extrait",
+      "Il comprend la structure des formulaires et extrait les paires clé-valeur",
+      "Il entraîne un modèle de classification d'images",
+      "Il synthétise du texte en voix"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Document Intelligence va au-delà de l'OCR en comprenant la structure des documents (tableaux, champs, paires clé-valeur) dans les formulaires et factures.",
+    "ref": "Azure Document Intelligence – Microsoft Learn"
+  },
+  {
+    "id": 11,
+    "domain": "NLP",
+    "question": "Quels deux scénarios de charge de travail IA sont des exemples de traitement du langage naturel (NLP) ?",
+    "choices": [
+      "Extraire du texte manuscrit d'images en ligne",
+      "Traduire du texte entre différentes langues à partir d'avis produits",
+      "Effectuer une analyse de sentiment sur des données de réseaux sociaux",
+      "Détecter des objets dans un flux vidéo"
+    ],
+    "answers": [
+      1,
+      2
+    ],
+    "explanation": "La traduction = Azure Translator (NLP). L'analyse de sentiment = Azure AI Language (NLP). L'extraction de texte manuscrit est de l'OCR (Vision). La détection d'objets est de la Vision par ordinateur.",
+    "ref": "Explorer le traitement du langage naturel – Microsoft Learn"
+  },
+  {
+    "id": 12,
+    "domain": "NLP",
+    "question": "Un centre d'appels veut détecter automatiquement si les appels clients expriment de la satisfaction ou de la frustration. Quelle capacité Azure AI doit être utilisée ?",
+    "choices": [
+      "Traduction vocale",
+      "Analyse de sentiment",
+      "Reconnaissance d'entités",
+      "Extraction de phrases clés"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'analyse de sentiment d'Azure AI Language classe le texte (ou la voix transcrite) comme positif, neutre ou négatif.",
+    "ref": "Analyse de sentiment Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 13,
+    "domain": "NLP",
+    "question": "Vous devez rendre votre site web disponible en 50 langues automatiquement. Quel service Azure AI devez-vous utiliser ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure AI Speech",
+      "Azure Translator",
+      "Azure OpenAI"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Azure Translator fournit une traduction de texte en temps réel dans plus de 100 langues.",
+    "ref": "Azure AI Translator – Microsoft Learn"
+  },
+  {
+    "id": 14,
+    "domain": "NLP",
+    "question": "Quel service Azure AI Language permet de détecter automatiquement les noms de personnes, d'organisations et de lieux dans un texte ?",
+    "choices": [
+      "Analyse de sentiment",
+      "Extraction de phrases clés",
+      "Reconnaissance d'entités nommées (NER)",
+      "Classification de texte"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "La reconnaissance d'entités nommées (NER) identifie et catégorise les entités nommées comme les personnes, organisations, lieux, dates dans un texte.",
+    "ref": "NER – Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 15,
+    "domain": "NLP",
+    "question": "Une entreprise souhaite indexer des milliers de documents juridiques et permettre des recherches sémantiques. Quel service Azure est le plus adapté ?",
+    "choices": [
+      "Azure AI Language + Azure AI Search",
+      "Azure AI Speech",
+      "Azure Custom Vision",
+      "Azure Bot Service"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "Azure AI Language extrait les entités et concepts clés, et Azure AI Search (avec Azure OpenAI Embeddings) permet la recherche sémantique sur de larges corpus documentaires.",
+    "ref": "Azure AI Language + Azure AI Search – Microsoft Learn"
+  },
+  {
+    "id": 16,
+    "domain": "NLP",
+    "question": "Quelle est la différence principale entre Azure AI Language et Azure AI Speech ?",
+    "choices": [
+      "Language traite le texte écrit, Speech traite la voix et l'audio",
+      "Language est plus cher que Speech",
+      "Speech supporte plus de langues que Language",
+      "Il n'y a pas de différence, ce sont les mêmes services"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "Azure AI Language analyse le texte (sentiment, entités, résumé). Azure AI Speech traite l'audio : speech-to-text, text-to-speech, reconnaissance du locuteur.",
+    "ref": "Azure AI Services – Microsoft Learn"
+  },
+  {
+    "id": 17,
+    "domain": "NLP",
+    "question": "Vous construisez une application qui doit comprendre les intentions de l'utilisateur dans des commandes vocales (ex : 'Allume la lumière du salon'). Quel service Azure devez-vous utiliser ?",
+    "choices": [
+      "Azure Translator",
+      "Conversational Language Understanding (CLU)",
+      "Azure AI Vision",
+      "Azure OpenAI"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Conversational Language Understanding (CLU) dans Azure AI Language est conçu pour extraire les intentions (intents) et entités dans des commandes en langage naturel.",
+    "ref": "Conversational Language Understanding – Microsoft Learn"
+  },
+  {
+    "id": 18,
+    "domain": "NLP",
+    "question": "Quelles deux fonctionnalités sont disponibles dans Azure AI Language ? Chaque réponse correcte présente une solution complète.",
+    "choices": [
+      "Synthèse vocale (text-to-speech)",
+      "Résumé automatique de texte",
+      "Analyse de sentiment",
+      "Détection d'objets dans des images"
+    ],
+    "answers": [
+      1,
+      2
+    ],
+    "explanation": "Azure AI Language inclut le résumé de texte et l'analyse de sentiment. La synthèse vocale appartient à Azure AI Speech. La détection d'objets est de la vision par ordinateur.",
+    "ref": "Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 19,
+    "domain": "NLP",
+    "question": "Un service de streaming veut générer automatiquement des sous-titres en temps réel pour ses vidéos en direct. Quel service Azure devez-vous utiliser ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure Translator",
+      "Azure AI Speech (Speech-to-text)",
+      "Azure OpenAI"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Azure AI Speech avec la fonctionnalité Speech-to-text permet la transcription audio en temps réel, idéale pour les sous-titres en direct.",
+    "ref": "Azure AI Speech – Microsoft Learn"
+  },
+  {
+    "id": 20,
+    "domain": "NLP",
+    "question": "Quel service Azure permet de créer un modèle personnalisé de classification de texte pour catégoriser automatiquement des tickets de support client ?",
+    "choices": [
+      "Azure Custom Vision",
+      "Azure AI Language (classification personnalisée)",
+      "Azure Machine Learning Designer",
+      "Azure Bot Service"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Language propose la classification de texte personnalisée, qui permet d'entraîner un modèle sur vos propres catégories sans expertise ML avancée.",
+    "ref": "Classification de texte personnalisée – Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 21,
+    "domain": "ML",
+    "question": "Vous voulez prédire le prix d'une maison en fonction de sa superficie et de sa localisation. Quel type de tâche de machine learning devez-vous utiliser ?",
+    "choices": [
+      "Classification",
+      "Clustering",
+      "Régression",
+      "Détection d'anomalies"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "La régression prédit une valeur numérique continue (ex. prix d'une maison). La classification prédit une catégorie. Le clustering regroupe des données non étiquetées.",
+    "ref": "Concepts fondamentaux de ML – Microsoft Learn"
+  },
+  {
+    "id": 22,
+    "domain": "ML",
+    "question": "Vous voulez construire un modèle sans écrire de code, en utilisant une interface glisser-déposer dans Azure Machine Learning. Quel outil devez-vous utiliser ?",
+    "choices": [
+      "Azure ML Notebooks",
+      "Azure ML Designer",
+      "AutoML",
+      "Azure Databricks"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure ML Designer est l'interface no-code/low-code avec glisser-déposer. AutoML sélectionne automatiquement les algorithmes mais n'est pas drag-and-drop.",
+    "ref": "Azure ML Designer – Microsoft Learn"
+  },
+  {
+    "id": 23,
+    "domain": "ML",
+    "question": "Quelle métrique est la plus appropriée pour évaluer un modèle de classification binaire ?",
+    "choices": [
+      "Erreur absolue moyenne (MAE)",
+      "Coefficient de détermination (R²)",
+      "AUC-ROC",
+      "Erreur quadratique moyenne (RMSE)"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "L'AUC-ROC est la métrique standard pour la classification binaire. MAE et RMSE sont pour la régression. R² mesure la variance expliquée en régression.",
+    "ref": "Évaluer les modèles de classification – Microsoft Learn"
+  },
+  {
+    "id": 24,
+    "domain": "ML",
+    "question": "Quel est l'objectif de la division des données en ensembles d'entraînement et de validation lors de la création d'un modèle de ML ?",
+    "choices": [
+      "Réduire la taille du jeu de données",
+      "Évaluer le modèle sur des données non vues et détecter le sur-apprentissage",
+      "Supprimer les lignes dupliquées",
+      "Normaliser les valeurs des features"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'ensemble de validation permet de mesurer la performance du modèle sur des données qu'il n'a pas vues pendant l'entraînement, ce qui aide à détecter le sur-apprentissage.",
+    "ref": "Entraîner et évaluer les modèles de régression – Microsoft Learn"
+  },
+  {
+    "id": 25,
+    "domain": "ML",
+    "question": "Quel type de workload ML regrouper les clients en segments basés sur leur comportement d'achat, sans catégories prédéfinies ?",
+    "choices": [
+      "Classification",
+      "Régression",
+      "Clustering",
+      "Prévision"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Le clustering est un apprentissage non supervisé qui regroupe les données sans étiquettes prédéfinies. La classification nécessite des données d'entraînement étiquetées.",
+    "ref": "Clustering – Microsoft Learn"
+  },
+  {
+    "id": 26,
+    "domain": "ML",
+    "question": "Dans Azure Machine Learning, qu'est-ce qu'AutoML ?",
+    "choices": [
+      "Un outil de visualisation de données",
+      "Une fonctionnalité qui teste automatiquement plusieurs algorithmes et hyperparamètres pour trouver le meilleur modèle",
+      "Un service de déploiement de modèles",
+      "Un éditeur de notebooks en ligne"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "AutoML automatise la sélection d'algorithmes et l'optimisation des hyperparamètres, permettant aux non-experts de créer des modèles performants rapidement.",
+    "ref": "AutoML – Azure Machine Learning – Microsoft Learn"
+  },
+  {
+    "id": 27,
+    "domain": "ML",
+    "question": "Qu'est-ce que le sur-apprentissage (overfitting) dans un modèle de machine learning ?",
+    "choices": [
+      "Le modèle apprend trop lentement",
+      "Le modèle performe bien sur les données d'entraînement mais mal sur les nouvelles données",
+      "Le modèle ne s'entraîne pas du tout",
+      "Le modèle utilise trop peu de données"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le sur-apprentissage se produit quand un modèle mémorise les données d'entraînement au lieu d'apprendre des patterns généralisables, ce qui dégrade ses performances sur de nouvelles données.",
+    "ref": "Entraîner et évaluer les modèles – Microsoft Learn"
+  },
+  {
+    "id": 28,
+    "domain": "ML",
+    "question": "Quel composant d'Azure Machine Learning est utilisé pour déployer un modèle entraîné afin qu'il puisse recevoir des requêtes en temps réel ?",
+    "choices": [
+      "Pipeline d'entraînement",
+      "Endpoint en temps réel",
+      "Azure Data Factory",
+      "Azure Synapse Analytics"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Un endpoint en temps réel (real-time endpoint) dans Azure ML permet de déployer un modèle et de l'exposer via une API REST pour des inférences en temps réel.",
+    "ref": "Déploiement de modèles – Azure Machine Learning – Microsoft Learn"
+  },
+  {
+    "id": 29,
+    "domain": "ML",
+    "question": "Une banque veut détecter automatiquement les transactions frauduleuses parmi des millions d'opérations. Quel type de tâche ML convient le mieux ?",
+    "choices": [
+      "Régression",
+      "Clustering",
+      "Classification / Détection d'anomalies",
+      "Prévision de séries temporelles"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "La détection de fraude est généralement traitée comme une classification binaire (fraude/non-fraude) ou de la détection d'anomalies si les fraudes sont très rares et non étiquetées.",
+    "ref": "Détection d'anomalies – Microsoft Learn"
+  },
+  {
+    "id": 30,
+    "domain": "ML",
+    "question": "Quelle est la différence entre l'apprentissage supervisé et non supervisé ?",
+    "choices": [
+      "L'apprentissage supervisé utilise des données non étiquetées, le non supervisé utilise des données étiquetées",
+      "L'apprentissage supervisé utilise des données étiquetées pour entraîner le modèle, le non supervisé découvre des patterns sans étiquettes",
+      "L'apprentissage supervisé est plus rapide que le non supervisé",
+      "Il n'y a pas de différence"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'apprentissage supervisé (classification, régression) s'entraîne sur des données avec des étiquettes connues. L'apprentissage non supervisé (clustering) découvre des structures cachées sans étiquettes.",
+    "ref": "Types d'apprentissage automatique – Microsoft Learn"
+  },
+  {
+    "id": 31,
+    "domain": "Generative AI",
+    "question": "Quel service Azure vous permet de déployer GPT-4 et de construire des solutions copilot personnalisées ?",
+    "choices": [
+      "Azure Machine Learning",
+      "Azure Bot Service",
+      "Azure OpenAI Service",
+      "Azure AI Language"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Azure OpenAI Service donne accès à GPT-4, GPT-3.5, DALL-E et d'autres modèles OpenAI pour créer des solutions d'IA générative.",
+    "ref": "Azure OpenAI Service – Microsoft Learn"
+  },
+  {
+    "id": 32,
+    "domain": "Generative AI",
+    "question": "Quel concept décrit le texte d'entrée que vous fournissez à un modèle d'IA générative pour guider sa sortie ?",
+    "choices": [
+      "Token",
+      "Embedding",
+      "Prompt",
+      "Fine-tuning"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Un prompt est le texte d'entrée fourni à un modèle d'IA générative. La conception de prompts efficaces s'appelle le prompt engineering.",
+    "ref": "Introduction au prompt engineering – Microsoft Learn"
+  },
+  {
+    "id": 33,
+    "domain": "Generative AI",
+    "question": "Quel service Azure fournit un filtrage de contenu (discours haineux, violence, contenu sexuel) pour les sorties d'IA générative ?",
+    "choices": [
+      "Azure Policy",
+      "Azure AI Content Safety",
+      "Azure Defender",
+      "Azure Monitor"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Content Safety détecte et filtre les contenus nuisibles dans les entrées et sorties des modèles IA.",
+    "ref": "Azure AI Content Safety – Microsoft Learn"
+  },
+  {
+    "id": 34,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce qu'un modèle de langage de grande taille (LLM) ?",
+    "choices": [
+      "Un modèle entraîné pour reconnaître des images à grande échelle",
+      "Un modèle de ML entraîné sur de vastes corpus de texte pour comprendre et générer du langage naturel",
+      "Un service de traduction automatique",
+      "Un outil de détection d'anomalies dans les bases de données"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Un LLM est un modèle de deep learning entraîné sur d'immenses quantités de texte, capable de comprendre, générer et raisonner en langage naturel (ex. GPT-4).",
+    "ref": "Introduction aux LLM – Microsoft Learn"
+  },
+  {
+    "id": 35,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce que le RAG (Retrieval-Augmented Generation) dans le contexte de l'IA générative ?",
+    "choices": [
+      "Une technique pour réduire la taille des modèles",
+      "Une approche qui combine la recherche dans une base de connaissances avec la génération de texte par un LLM",
+      "Un type de fine-tuning",
+      "Un service Azure spécifique"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le RAG enrichit les réponses d'un LLM en lui fournissant des données récupérées depuis une base documentaire, limitant les hallucinations et ancrant les réponses dans des faits.",
+    "ref": "RAG – Azure AI Foundry – Microsoft Learn"
+  },
+  {
+    "id": 36,
+    "domain": "Generative AI",
+    "question": "Une entreprise veut créer un assistant IA qui répond aux questions des employés en s'appuyant sur sa documentation interne. Quel service Azure est le plus adapté ?",
+    "choices": [
+      "Azure Custom Vision",
+      "Azure OpenAI Service avec Azure AI Search (RAG)",
+      "Azure ML AutoML",
+      "Azure AI Speech"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure OpenAI couplé à Azure AI Search permet de créer un assistant Q&A ancré dans la documentation interne de l'entreprise via l'architecture RAG.",
+    "ref": "Azure OpenAI + Azure AI Search – Microsoft Learn"
+  },
+  {
+    "id": 37,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce qu'un embedding dans le contexte de l'IA générative ?",
+    "choices": [
+      "Le processus de compression d'un modèle",
+      "Une représentation numérique (vecteur) d'un texte ou d'une image capturant sa signification sémantique",
+      "Un paramètre d'ajustement du modèle",
+      "Un type de prompt"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Un embedding est une représentation vectorielle dense d'un texte ou d'une image. Des contenus sémantiquement similaires ont des embeddings proches, ce qui permet la recherche sémantique.",
+    "ref": "Embeddings – Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 38,
+    "domain": "Generative AI",
+    "question": "Quel paramètre d'un LLM contrôle le degré de créativité / aléatoire des réponses générées ?",
+    "choices": [
+      "Max tokens",
+      "Temperature",
+      "Top-P",
+      "Frequency penalty"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La temperature contrôle le degré d'aléatoire : une valeur proche de 0 donne des réponses déterministes, une valeur élevée (ex. 1.0) donne des réponses plus créatives et variées.",
+    "ref": "Paramètres Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 39,
+    "domain": "Generative AI",
+    "question": "Quelles deux affirmations décrivent des capacités d'Azure OpenAI Service ?",
+    "choices": [
+      "Entraîner des modèles de régression pour la prévision des ventes",
+      "Générer du texte à partir d'un prompt en utilisant GPT-4",
+      "Créer des images à partir d'une description textuelle avec DALL-E",
+      "Détecter des visages dans des images"
+    ],
+    "answers": [
+      1,
+      2
+    ],
+    "explanation": "Azure OpenAI Service permet la génération de texte (GPT-4) et la génération d'images (DALL-E). L'entraînement de modèles de régression relève d'Azure ML. La détection de visages d'Azure AI Vision.",
+    "ref": "Azure OpenAI Service – Microsoft Learn"
+  },
+  {
+    "id": 40,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce que le fine-tuning d'un LLM ?",
+    "choices": [
+      "Supprimer des couches du modèle pour le rendre plus léger",
+      "Ré-entraîner partiellement un modèle pré-entraîné sur un jeu de données spécifique pour l'adapter à un cas d'usage particulier",
+      "Écrire de meilleurs prompts",
+      "Déployer le modèle sur Azure"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le fine-tuning consiste à continuer l'entraînement d'un LLM pré-entraîné sur des données spécifiques à un domaine, ce qui améliore ses performances sur ce cas d'usage précis.",
+    "ref": "Fine-tuning – Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 41,
+    "domain": "Responsible AI",
+    "question": "Une entreprise utilise un outil IA de recrutement qui rejette plus de candidatures de femmes que d'hommes pour des postes techniques. Quel principe de Responsible AI est violé ?",
+    "choices": [
+      "Fiabilité et sécurité",
+      "Équité (Fairness)",
+      "Transparence",
+      "Responsabilité"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'équité exige que les systèmes IA traitent tous les groupes de manière équitable et évitent toute discrimination fondée sur le sexe, la race, l'âge, etc.",
+    "ref": "Principes de Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 42,
+    "domain": "Responsible AI",
+    "question": "Un modèle IA prend des décisions affectant des clients mais l'entreprise ne peut pas expliquer comment il arrive à ses conclusions. Quel principe de Responsible AI est absent ?",
+    "choices": [
+      "Équité",
+      "Inclusivité",
+      "Transparence",
+      "Confidentialité et sécurité"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "La transparence exige que les systèmes IA soient compréhensibles et explicables, afin que les utilisateurs et les opérateurs comprennent comment les décisions sont prises.",
+    "ref": "Principes de Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 43,
+    "domain": "Responsible AI",
+    "question": "Quels deux principes font partie du cadre Responsible AI de Microsoft ?",
+    "choices": [
+      "Rentabilité",
+      "Inclusivité",
+      "Rapidité",
+      "Responsabilité (Accountability)"
+    ],
+    "answers": [
+      1,
+      3
+    ],
+    "explanation": "Les 6 principes de Responsible AI de Microsoft sont : Équité, Fiabilité et sécurité, Confidentialité et sécurité, Inclusivité, Transparence, Responsabilité.",
+    "ref": "Principes Microsoft Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 44,
+    "domain": "Responsible AI",
+    "question": "Quel principe Responsible AI garantit que les systèmes IA fonctionnent correctement même dans des situations imprévues ou adversariales ?",
+    "choices": [
+      "Équité",
+      "Fiabilité et sécurité",
+      "Transparence",
+      "Inclusivité"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La fiabilité et la sécurité (Reliability & Safety) garantissent que les systèmes IA se comportent de manière cohérente, sûre et résistante aux abus ou erreurs inattendues.",
+    "ref": "Principes de Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 45,
+    "domain": "Responsible AI",
+    "question": "Un système de reconnaissance faciale est déployé dans un aéroport sans informer les voyageurs. Quel(s) principe(s) Responsible AI est/sont violé(s) ?",
+    "choices": [
+      "Fiabilité uniquement",
+      "Transparence et Confidentialité",
+      "Équité et Inclusivité",
+      "Responsabilité uniquement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Ne pas informer les personnes qu'elles sont reconnues viole la Transparence (les personnes doivent savoir comment l'IA est utilisée) et la Confidentialité (traitement de données biométriques sans consentement).",
+    "ref": "Principes de Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 46,
+    "domain": "Responsible AI",
+    "question": "Quel outil Microsoft aide les équipes IA à détecter, diagnostiquer et atténuer les biais et problèmes d'équité dans les modèles de machine learning ?",
+    "choices": [
+      "Azure Monitor",
+      "Responsible AI Dashboard (dans Azure ML)",
+      "Azure Policy",
+      "Azure Advisor"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le Responsible AI Dashboard d'Azure Machine Learning intègre des outils comme Fairlearn, InterpretML et Error Analysis pour auditer les modèles sur l'équité, l'explicabilité et les erreurs.",
+    "ref": "Responsible AI Dashboard – Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 47,
+    "domain": "AI Workloads",
+    "question": "Quels deux scénarios sont des exemples de workloads d'IA conversationnelle ?",
+    "choices": [
+      "Un assistant virtuel qui planifie des réunions via le chat",
+      "Une application qui traduit des descriptions de produits",
+      "Un chatbot qui répond aux FAQ sur un site web",
+      "Un système qui prédit le chiffre d'affaires mensuel"
+    ],
+    "answers": [
+      0,
+      2
+    ],
+    "explanation": "L'IA conversationnelle implique des bots ou assistants qui interagissent en langage naturel. La traduction est du NLP, la prévision des revenus est de la régression ML.",
+    "ref": "IA conversationnelle – Microsoft Learn"
+  },
+  {
+    "id": 48,
+    "domain": "AI Workloads",
+    "question": "Quel type de workload IA utilise des techniques d'apprentissage par renforcement pour qu'un agent prenne des décisions optimales dans un environnement ?",
+    "choices": [
+      "Computer Vision",
+      "ML supervisé",
+      "Apprentissage par renforcement",
+      "NLP"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "L'apprentissage par renforcement (Reinforcement Learning) entraîne un agent à prendre des décisions en interagissant avec un environnement pour maximiser une récompense cumulée.",
+    "ref": "Apprentissage par renforcement – Microsoft Learn"
+  },
+  {
+    "id": 49,
+    "domain": "AI Workloads",
+    "question": "Une application de conduite autonome utilise des capteurs pour détecter des piétons et des obstacles. Quel(s) type(s) de workload IA sont impliqués ?",
+    "choices": [
+      "NLP uniquement",
+      "Computer Vision et ML prédictif",
+      "IA générative",
+      "IA conversationnelle uniquement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La conduite autonome combine la vision par ordinateur (détection d'objets) et le ML prédictif (prise de décision) pour analyser l'environnement et agir en conséquence.",
+    "ref": "Workloads IA – Microsoft Learn"
+  },
+  {
+    "id": 50,
+    "domain": "AI Workloads",
+    "question": "Quel service Azure est spécialement conçu pour créer des chatbots et des assistants virtuels multi-canaux (Teams, web, etc.) ?",
+    "choices": [
+      "Azure OpenAI Service",
+      "Azure AI Language",
+      "Azure Bot Service",
+      "Azure AI Speech"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Azure Bot Service est la plateforme dédiée à la création, l'hébergement et la connexion de bots à de multiples canaux (Teams, Slack, web, WhatsApp, etc.).",
+    "ref": "Azure Bot Service – Microsoft Learn"
+  },
+  {
+    "id": 51,
+    "domain": "Vision",
+    "question": "Quel service Azure permet d'analyser une image et de générer automatiquement une description textuelle de son contenu ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure AI Vision (Image Analysis)",
+      "Azure Custom Vision",
+      "Azure AI Speech"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Vision Image Analysis peut générer des légendes (captions) et des tags décrivant le contenu d'une image de manière automatique.",
+    "ref": "Image Analysis – Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 52,
+    "domain": "Vision",
+    "question": "Vous devez détecter si une photo de profil soumise par un utilisateur contient un visage humain. Quel service Azure devez-vous utiliser ?",
+    "choices": [
+      "Azure Custom Vision",
+      "Azure AI Vision / Face API",
+      "Azure AI Language",
+      "Azure Document Intelligence"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Face (intégré dans Azure AI Vision) permet de détecter la présence de visages humains dans des images et d'en analyser les attributs.",
+    "ref": "Azure AI Face – Microsoft Learn"
+  },
+  {
+    "id": 53,
+    "domain": "Vision",
+    "question": "Quelle est la différence principale entre Azure AI Vision et Azure Custom Vision ?",
+    "choices": [
+      "Azure AI Vision est gratuit, Custom Vision est payant",
+      "Azure AI Vision utilise des modèles pré-entraînés génériques, Custom Vision permet d'entraîner des modèles sur vos propres images",
+      "Azure Custom Vision est plus rapide",
+      "Il n'y a aucune différence"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Vision offre des modèles pré-entraînés prêts à l'emploi. Custom Vision vous permet d'entraîner des modèles personnalisés avec vos propres données d'images.",
+    "ref": "Azure AI Vision vs Custom Vision – Microsoft Learn"
+  },
+  {
+    "id": 54,
+    "domain": "Vision",
+    "question": "Un agriculteur veut détecter automatiquement les maladies sur les feuilles de ses cultures à partir de photos prises avec un smartphone. Quel service Azure est le plus adapté ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure Custom Vision",
+      "Azure AI Speech",
+      "Azure OpenAI"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Custom Vision permet d'entraîner un modèle de classification d'images sur des photos de feuilles saines et malades, idéal pour ce type de cas d'usage agricole spécifique.",
+    "ref": "Custom Vision – Microsoft Learn"
+  },
+  {
+    "id": 55,
+    "domain": "Vision",
+    "question": "Quelles deux affirmations décrivent correctement les capacités d'Azure AI Vision ? Chaque réponse correcte présente une solution complète.",
+    "choices": [
+      "Générer du texte créatif à partir d'une image",
+      "Détecter des objets et leur position dans une image",
+      "Lire et extraire du texte dans des images (OCR)",
+      "Analyser le sentiment d'une description d'image"
+    ],
+    "answers": [
+      1,
+      2
+    ],
+    "explanation": "Azure AI Vision peut détecter des objets avec leurs bounding boxes et extraire du texte via OCR. La génération de texte créatif est de l'IA générative, l'analyse de sentiment est du NLP.",
+    "ref": "Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 56,
+    "domain": "Vision",
+    "question": "Vous travaillez sur un projet de modération de contenu pour une plateforme sociale. Vous devez détecter automatiquement les images inappropriées. Quel service Azure utilisez-vous ?",
+    "choices": [
+      "Azure AI Content Safety",
+      "Azure AI Language",
+      "Azure Bot Service",
+      "Azure ML Designer"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "Azure AI Content Safety analyse les images et textes pour détecter les contenus inappropriés (violence, nudité, contenu haineux) et protéger les plateformes en ligne.",
+    "ref": "Azure AI Content Safety – Microsoft Learn"
+  },
+  {
+    "id": 57,
+    "domain": "Vision",
+    "question": "Dans quel format Azure Document Intelligence retourne-t-il les données extraites d'un document ?",
+    "choices": [
+      "Audio MP3",
+      "JSON structuré avec les champs, valeurs et leur position dans le document",
+      "Fichier Excel",
+      "Texte brut uniquement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Document Intelligence retourne un JSON structuré contenant les paires clé-valeur, tableaux, et positions des éléments dans le document, facilitant l'intégration dans des applications.",
+    "ref": "Azure Document Intelligence – Microsoft Learn"
+  },
+  {
+    "id": 58,
+    "domain": "Vision",
+    "question": "Quel modèle pré-construit d'Azure Document Intelligence est spécialisé pour extraire les données des cartes de visite ?",
+    "choices": [
+      "Modèle de facture",
+      "Modèle de carte de visite",
+      "Modèle de reçu",
+      "Modèle général"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Document Intelligence propose des modèles pré-construits spécialisés : factures, reçus, cartes d'identité, cartes de visite, W-2, etc., sans besoin d'entraînement.",
+    "ref": "Modèles Document Intelligence – Microsoft Learn"
+  },
+  {
+    "id": 59,
+    "domain": "Vision",
+    "question": "Une chaîne de supermarchés veut vérifier automatiquement que les étagères sont correctement remplies en analysant des photos. Quel type de workload Vision est impliqué ?",
+    "choices": [
+      "OCR",
+      "Détection d'objets",
+      "Analyse de sentiment visuel",
+      "Synthèse d'images"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La vérification du remplissage des étagères nécessite la détection d'objets pour identifier les produits présents et les emplacements vides dans les images.",
+    "ref": "Détection d'objets – Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 60,
+    "domain": "Vision",
+    "question": "Quel outil Azure permet de tester facilement les API de vision par ordinateur sans écrire de code, directement depuis le portail Azure ?",
+    "choices": [
+      "Azure Cloud Shell",
+      "Vision Studio (ai.azure.com)",
+      "Azure DevOps",
+      "Azure Data Factory"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Vision Studio sur ai.azure.com permet de tester interactivement toutes les fonctionnalités d'Azure AI Vision (OCR, analyse d'image, détection de visages) sans écrire une ligne de code.",
+    "ref": "Vision Studio – Microsoft Learn"
+  },
+  {
+    "id": 61,
+    "domain": "Vision",
+    "question": "Vous devez extraire des informations structurées (numéro, date, montant total) d'une facture scannée. Quel service Azure est le plus adapté ?",
+    "choices": [
+      "Azure AI Vision OCR basique",
+      "Azure Document Intelligence (modèle Facture)",
+      "Azure AI Language",
+      "Azure ML AutoML"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le modèle Facture pré-construit d'Azure Document Intelligence extrait automatiquement les champs standards des factures (vendeur, acheteur, montant, TVA, date) sans entraînement.",
+    "ref": "Modèle Facture – Document Intelligence – Microsoft Learn"
+  },
+  {
+    "id": 62,
+    "domain": "Vision",
+    "question": "Quel type d'apprentissage automatique est généralement utilisé en arrière-plan par les modèles de vision par ordinateur modernes ?",
+    "choices": [
+      "Régression linéaire",
+      "Réseaux de neurones convolutifs (CNN)",
+      "Clustering K-means",
+      "Arbres de décision"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les réseaux de neurones convolutifs (CNN) sont la base des modèles de vision par ordinateur modernes. Ils apprennent automatiquement des features visuelles hiérarchiques.",
+    "ref": "Concepts de deep learning – Microsoft Learn"
+  },
+  {
+    "id": 63,
+    "domain": "Vision",
+    "question": "Vous souhaitez créer un système qui alerte automatiquement quand un employé entre dans une zone dangereuse détectée par caméra. Quelle combinaison de services Azure utilisez-vous ?",
+    "choices": [
+      "Azure AI Speech + Azure Bot Service",
+      "Azure AI Vision Spatial Analysis + Azure Logic Apps / Event Hub",
+      "Azure AI Language + Azure OpenAI",
+      "Azure ML Designer + Azure Data Factory"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'analyse spatiale d'Azure AI Vision détecte les intrusions de personnes dans des zones définies. Azure Logic Apps ou Event Hub peuvent déclencher des alertes en temps réel.",
+    "ref": "Analyse spatiale – Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 64,
+    "domain": "Vision",
+    "question": "Quelle est la limite principale de la fonctionnalité de détection de visages d'Azure AI Face concernant l'identification de personnes spécifiques ?",
+    "choices": [
+      "Elle ne fonctionne qu'en noir et blanc",
+      "L'identification de personnes spécifiques (Face Identification) nécessite une approbation préalable de Microsoft pour des raisons de Responsible AI",
+      "Elle ne peut détecter qu'un seul visage par image",
+      "Elle n'est disponible qu'en anglais"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Microsoft a restreint l'accès à Face Identification (reconnaissance de personnes spécifiques) pour des raisons éthiques. Les entreprises doivent faire une demande d'accès justifiée.",
+    "ref": "Responsible AI – Azure AI Face – Microsoft Learn"
+  },
+  {
+    "id": 65,
+    "domain": "Vision",
+    "question": "Quel format de sortie l'OCR d'Azure AI Vision produit-il pour les textes détectés dans une image ?",
+    "choices": [
+      "Un fichier audio lu à voix haute",
+      "Le texte extrait avec les coordonnées de chaque mot/ligne dans l'image",
+      "Uniquement le texte brut sans mise en forme",
+      "Un PDF avec le texte superposé"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'OCR d'Azure AI Vision retourne le texte détecté accompagné des bounding boxes (coordonnées) de chaque mot et ligne, permettant de connaître la position exacte dans l'image.",
+    "ref": "OCR – Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 66,
+    "domain": "Vision",
+    "question": "Vous construisez une appli de réalité augmentée qui doit reconnaître des meubles dans une pièce en temps réel. Quel service Azure est le plus approprié ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure Custom Vision (détection d'objets)",
+      "Azure AI Speech",
+      "Azure Translator"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Custom Vision en mode détection d'objets permet d'entraîner un modèle pour reconnaître et localiser des catégories spécifiques d'objets (meubles) dans des images.",
+    "ref": "Custom Vision – détection d'objets – Microsoft Learn"
+  },
+  {
+    "id": 67,
+    "domain": "Vision",
+    "question": "Quel est le nombre minimum d'images recommandé par classe pour entraîner un modèle Custom Vision performant ?",
+    "choices": [
+      "1 image suffit",
+      "Au moins 5 images par classe (idéalement 50+)",
+      "Au moins 10 000 images par classe",
+      "Pas d'images nécessaires, Custom Vision utilise des données synthétiques"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Microsoft recommande au moins 50 images d'entraînement par classe pour Custom Vision, bien que 5 suffisent pour commencer. Plus d'images = modèle plus précis.",
+    "ref": "Bonnes pratiques Custom Vision – Microsoft Learn"
+  },
+  {
+    "id": 68,
+    "domain": "Vision",
+    "question": "Quelle fonctionnalité d'Azure AI Vision peut décrire une image pour des personnes malvoyantes ?",
+    "choices": [
+      "Spatial Analysis",
+      "Image Captioning (génération de légendes)",
+      "Face Detection",
+      "Document Intelligence"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Image Captioning génère une description textuelle du contenu d'une image (ex. 'un chien qui court dans un parc'), utile pour l'accessibilité des personnes malvoyantes.",
+    "ref": "Image Analysis – Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 69,
+    "domain": "Vision",
+    "question": "Un musée veut créer une appli mobile où les visiteurs photographient une œuvre d'art pour obtenir des informations. Quel service Azure convient le mieux ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure Custom Vision (classification d'images)",
+      "Azure AI Speech",
+      "Azure OpenAI uniquement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Custom Vision peut être entraîné sur les œuvres du musée pour les reconnaître et déclencher l'affichage des informations correspondantes.",
+    "ref": "Custom Vision – Microsoft Learn"
+  },
+  {
+    "id": 70,
+    "domain": "Vision",
+    "question": "Quel service Azure AI permet d'analyser des vidéos pour extraire automatiquement des insights comme les visages détectés, les transcriptions, les mots-clés et les scènes ?",
+    "choices": [
+      "Azure AI Vision",
+      "Azure Video Indexer",
+      "Azure AI Speech",
+      "Azure Media Services"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Video Indexer (dans Azure AI Foundry) extrait automatiquement des métadonnées riches des vidéos : personnes, transcriptions, sentiments, sujets, scènes, marques, etc.",
+    "ref": "Azure Video Indexer – Microsoft Learn"
+  },
+  {
+    "id": 71,
+    "domain": "NLP",
+    "question": "Quel service Azure AI permet de détecter la langue d'un texte automatiquement ?",
+    "choices": [
+      "Azure Translator",
+      "Azure AI Language (détection de langue)",
+      "Azure AI Speech",
+      "Azure OpenAI"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Language propose la détection automatique de langue, qui identifie la langue d'un texte et retourne un score de confiance.",
+    "ref": "Détection de langue – Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 72,
+    "domain": "NLP",
+    "question": "Vous devez résumer automatiquement de longs rapports médicaux en quelques phrases clés. Quel service Azure est le plus adapté ?",
+    "choices": [
+      "Azure AI Language (résumé extractif/abstractif)",
+      "Azure Custom Vision",
+      "Azure AI Speech",
+      "Azure ML Designer"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "Azure AI Language propose le résumé extractif (sélection des phrases les plus importantes) et abstractif (génération d'un résumé reformulé) pour condenser des documents longs.",
+    "ref": "Résumé de texte – Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 73,
+    "domain": "NLP",
+    "question": "Quelle est la différence entre l'extraction de phrases clés et la reconnaissance d'entités nommées dans Azure AI Language ?",
+    "choices": [
+      "Il n'y a aucune différence",
+      "L'extraction de phrases clés identifie les concepts importants du texte, la NER identifie des entités spécifiques catégorisées (personnes, lieux, organisations)",
+      "L'extraction de phrases clés est plus précise",
+      "La NER fonctionne uniquement en anglais"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les phrases clés retournent les termes importants sans catégorie. La NER va plus loin en classifiant les entités détectées en catégories (personne, lieu, organisation, date, etc.).",
+    "ref": "Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 74,
+    "domain": "NLP",
+    "question": "Un chatbot de service client doit comprendre que 'Je veux annuler ma commande' et 'Supprimer mon achat' expriment la même intention. Quelle technique NLP est utilisée ?",
+    "choices": [
+      "Analyse de sentiment",
+      "Compréhension du langage conversationnel (CLU / intention)",
+      "OCR",
+      "Clustering"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La compréhension du langage conversationnel (CLU) dans Azure AI Language mappe différentes formulations à la même intention, permettant aux chatbots de comprendre les utilisateurs.",
+    "ref": "Conversational Language Understanding – Microsoft Learn"
+  },
+  {
+    "id": 75,
+    "domain": "NLP",
+    "question": "Quel service Azure permet de créer un système de questions-réponses basé sur une FAQ existante sans entraîner un modèle ML ?",
+    "choices": [
+      "Azure Custom Vision",
+      "Azure Question Answering (dans Azure AI Language)",
+      "Azure ML AutoML",
+      "Azure Data Factory"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Question Answering (anciennement QnA Maker) dans Azure AI Language permet de créer rapidement une base de connaissances à partir de documents FAQ et de l'exposer via une API.",
+    "ref": "Question Answering – Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 76,
+    "domain": "NLP",
+    "question": "Vous devez analyser des milliers d'avis clients pour identifier les aspects spécifiques mentionnés (livraison, qualité, service) et leur sentiment associé. Quelle fonctionnalité Azure utilisez-vous ?",
+    "choices": [
+      "Analyse de sentiment basique",
+      "Analyse de sentiment basée sur les aspects (Opinion Mining)",
+      "Extraction de phrases clés",
+      "NER"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'Opinion Mining (analyse de sentiment basée sur les aspects) dans Azure AI Language identifie les aspects mentionnés dans le texte et le sentiment associé à chacun (ex. 'livraison' → négatif).",
+    "ref": "Opinion Mining – Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 77,
+    "domain": "NLP",
+    "question": "Quel service Azure Speech permet de générer une voix synthétique personnalisée ressemblant à une voix humaine spécifique ?",
+    "choices": [
+      "Speech-to-Text",
+      "Text-to-Speech (avec voix neuronales personnalisées)",
+      "Speaker Recognition",
+      "Speech Translation"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Speech Text-to-Speech propose des voix neuronales très naturelles, et permet même de créer des voix personnalisées (Custom Neural Voice) imitant une voix spécifique.",
+    "ref": "Text-to-Speech – Azure AI Speech – Microsoft Learn"
+  },
+  {
+    "id": 78,
+    "domain": "NLP",
+    "question": "Un système de transcription automatique doit identifier quel interlocuteur parle à chaque instant dans une réunion enregistrée. Quelle fonctionnalité Azure Speech est nécessaire ?",
+    "choices": [
+      "Speech Translation",
+      "Speaker Diarization",
+      "Keyword Recognition",
+      "Custom Speech"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La Speaker Diarization dans Azure AI Speech identifie et sépare les différents locuteurs dans un enregistrement audio, en attribuant chaque segment au bon interlocuteur.",
+    "ref": "Speaker Diarization – Azure AI Speech – Microsoft Learn"
+  },
+  {
+    "id": 79,
+    "domain": "NLP",
+    "question": "Quel service Azure permet de traduire de la parole en temps réel lors d'une réunion internationale ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure Speech Translation",
+      "Azure Translator texte uniquement",
+      "Azure Bot Service"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Speech Translation traduit la parole en temps réel d'une langue vers une autre, idéal pour les réunions multilingues ou les événements internationaux.",
+    "ref": "Speech Translation – Azure AI Speech – Microsoft Learn"
+  },
+  {
+    "id": 80,
+    "domain": "NLP",
+    "question": "Vous construisez un assistant vocal pour une application mobile. L'utilisateur parle et l'app répond avec une voix synthétique. Quelles deux fonctionnalités Azure Speech sont nécessaires ?",
+    "choices": [
+      "Speaker Recognition",
+      "Speech-to-Text",
+      "Text-to-Speech",
+      "Speech Translation"
+    ],
+    "answers": [
+      1,
+      2
+    ],
+    "explanation": "Speech-to-Text transcrit la parole de l'utilisateur en texte. Text-to-Speech convertit la réponse textuelle en parole synthétique pour que l'app réponde vocalement.",
+    "ref": "Azure AI Speech – Microsoft Learn"
+  },
+  {
+    "id": 81,
+    "domain": "NLP",
+    "question": "Quel est l'avantage de Custom Speech dans Azure AI Speech par rapport au modèle standard ?",
+    "choices": [
+      "Il est gratuit",
+      "Il permet d'améliorer la précision de la reconnaissance vocale sur des vocabulaires métier spécifiques (termes techniques, noms propres)",
+      "Il supporte plus de langues",
+      "Il est plus rapide uniquement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Custom Speech permet d'affiner le modèle de reconnaissance vocale Azure avec des données audio et textuelles spécifiques à votre domaine, améliorant la précision sur les termes métier.",
+    "ref": "Custom Speech – Azure AI Speech – Microsoft Learn"
+  },
+  {
+    "id": 82,
+    "domain": "NLP",
+    "question": "Quelle fonctionnalité d'Azure AI Language permet d'extraire des informations structurées personnalisées depuis des textes (ex. numéros de contrat, références produit) ?",
+    "choices": [
+      "Analyse de sentiment",
+      "Reconnaissance d'entités personnalisée (Custom NER)",
+      "Résumé automatique",
+      "Question Answering"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Custom NER dans Azure AI Language vous permet de définir vos propres types d'entités à extraire, adaptés à votre domaine métier spécifique.",
+    "ref": "Custom NER – Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 83,
+    "domain": "NLP",
+    "question": "Un opérateur téléphonique veut analyser automatiquement ses contrats clients pour vérifier la conformité légale. Quel service Azure est le plus adapté ?",
+    "choices": [
+      "Azure Custom Vision",
+      "Azure AI Language (extraction d'entités + résumé)",
+      "Azure AI Speech",
+      "Azure Bot Service"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Language peut extraire des entités clés (parties, dates, clauses) et résumer des documents légaux, facilitant l'analyse de conformité à grande échelle.",
+    "ref": "Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 84,
+    "domain": "NLP",
+    "question": "Quel langage de requête Azure utilise-t-on pour construire une base de connaissances avec Question Answering ?",
+    "choices": [
+      "SQL",
+      "Aucun, c'est no-code via un portail ou l'import de documents FAQ existants",
+      "Python uniquement",
+      "YAML"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Question Answering est no-code : on importe des documents Word, PDF, URLs de FAQ, et le service crée automatiquement les paires question-réponse sans écrire de code.",
+    "ref": "Question Answering – Microsoft Learn"
+  },
+  {
+    "id": 85,
+    "domain": "NLP",
+    "question": "Vous analysez des tweets pour détecter des crises de réputation en temps réel. Quel pipeline Azure NLP mettez-vous en place ?",
+    "choices": [
+      "Azure AI Language (analyse de sentiment) + Azure Event Hubs + Azure Stream Analytics",
+      "Azure Custom Vision + Azure Bot Service",
+      "Azure ML Designer + Azure Data Factory",
+      "Azure AI Speech + Azure Translator"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "L'analyse de sentiment d'Azure AI Language traite les tweets. Azure Event Hubs ingère le flux en temps réel, et Azure Stream Analytics permet d'appliquer des règles d'alerte en temps réel.",
+    "ref": "Azure AI Language + Azure Stream Analytics – Microsoft Learn"
+  },
+  {
+    "id": 86,
+    "domain": "NLP",
+    "question": "Quel service Azure NLP permet de créer un modèle qui classe automatiquement des e-mails entrants dans des catégories (commercial, support, facturation) ?",
+    "choices": [
+      "Azure AI Language – Classification de texte personnalisée",
+      "Azure Custom Vision",
+      "Azure ML AutoML (régression)",
+      "Azure OpenAI uniquement"
+    ],
+    "answers": [
+      0
+    ],
+    "explanation": "Azure AI Language Classification de texte personnalisée permet d'entraîner un modèle de classification multi-classes sur vos propres catégories avec vos exemples d'e-mails.",
+    "ref": "Classification de texte – Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 87,
+    "domain": "NLP",
+    "question": "Dans Azure AI Language, quelle est la différence entre l'analyse de sentiment par phrase et par document ?",
+    "choices": [
+      "Il n'y a aucune différence",
+      "L'analyse par document retourne un sentiment global pour tout le texte, l'analyse par phrase retourne un sentiment pour chaque phrase individuellement",
+      "L'analyse par document est plus précise",
+      "L'analyse par phrase ne fonctionne qu'en anglais"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Language propose les deux niveaux : un score de sentiment global pour le document entier ET des scores individuels pour chaque phrase, offrant une granularité fine.",
+    "ref": "Analyse de sentiment – Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 88,
+    "domain": "NLP",
+    "question": "Quel service Microsoft intègre nativement Azure AI Language et Azure AI Search pour créer des expériences de recherche intelligente sur des documents d'entreprise ?",
+    "choices": [
+      "Azure Data Factory",
+      "Azure AI Foundry / Azure Cognitive Search avec enrichissement IA",
+      "Azure Synapse Analytics",
+      "Azure DevOps"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Search avec les skills cognitifs d'Azure AI Language permet d'indexer, enrichir (extraction d'entités, sentiment, traduction) et rechercher intelligemment dans des corpus documentaires.",
+    "ref": "Azure AI Search – Microsoft Learn"
+  },
+  {
+    "id": 89,
+    "domain": "NLP",
+    "question": "Quelles deux capacités sont disponibles dans Azure AI Speech ? Chaque réponse correcte présente une solution complète.",
+    "choices": [
+      "Détection d'objets dans des images",
+      "Reconnaissance vocale (speech-to-text)",
+      "Génération d'images",
+      "Synthèse vocale (text-to-speech)"
+    ],
+    "answers": [
+      1,
+      3
+    ],
+    "explanation": "Azure AI Speech couvre la reconnaissance vocale (speech-to-text), la synthèse vocale (text-to-speech), la traduction vocale et la reconnaissance du locuteur. La vision et la génération d'images sont d'autres services.",
+    "ref": "Azure AI Speech – Microsoft Learn"
+  },
+  {
+    "id": 90,
+    "domain": "NLP",
+    "question": "Pourquoi utiliser Azure Translator plutôt qu'Azure OpenAI pour de la traduction à grande échelle ?",
+    "choices": [
+      "Azure Translator ne supporte que 10 langues",
+      "Azure Translator est optimisé pour la traduction, supporte 100+ langues, est moins coûteux à grande échelle et offre une API dédiée",
+      "Azure OpenAI est toujours meilleur pour la traduction",
+      "Il n'y a aucune différence de coût"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Translator est spécialisé, économique à grande échelle, supporte plus de 100 langues avec des modèles optimisés. Azure OpenAI est plus adapté aux tâches nécessitant du raisonnement ou de la créativité.",
+    "ref": "Azure Translator – Microsoft Learn"
+  },
+  {
+    "id": 91,
+    "domain": "ML",
+    "question": "Qu'est-ce qu'un pipeline dans Azure Machine Learning ?",
+    "choices": [
+      "Un service de messagerie Azure",
+      "Un flux de travail automatisé qui enchaîne les étapes de préparation des données, entraînement et évaluation d'un modèle",
+      "Un tableau de bord de monitoring",
+      "Un type de base de données"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Un pipeline Azure ML orchestre et automatise les étapes du workflow ML (nettoyage, feature engineering, entraînement, évaluation) de façon reproductible et planifiable.",
+    "ref": "Pipelines – Azure Machine Learning – Microsoft Learn"
+  },
+  {
+    "id": 92,
+    "domain": "ML",
+    "question": "Quel type d'algorithme ML utiliseriez-vous pour prédire si un email est un spam ou non ?",
+    "choices": [
+      "Régression linéaire",
+      "Classification binaire",
+      "Clustering",
+      "Série temporelle"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Détecter spam/non-spam est un problème de classification binaire (deux classes). L'algorithme apprend à partir d'exemples étiquetés pour classer les nouveaux e-mails.",
+    "ref": "Classification – Microsoft Learn"
+  },
+  {
+    "id": 93,
+    "domain": "ML",
+    "question": "Dans Azure ML, quel est le rôle d'un 'compute cluster' ?",
+    "choices": [
+      "Stocker les données d'entraînement",
+      "Fournir les ressources de calcul (VMs) nécessaires pour entraîner des modèles à grande échelle",
+      "Déployer les modèles en production",
+      "Visualiser les métriques"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Un compute cluster dans Azure ML est un ensemble de VMs qui s'adapte automatiquement à la charge pour exécuter les jobs d'entraînement, sans gérer l'infrastructure manuellement.",
+    "ref": "Compute clusters – Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 94,
+    "domain": "ML",
+    "question": "Qu'est-ce que la normalisation des features dans le prétraitement des données ML ?",
+    "choices": [
+      "Supprimer les colonnes inutiles",
+      "Mettre les valeurs numériques à la même échelle pour éviter qu'une feature domine les autres",
+      "Convertir les données en images",
+      "Augmenter la quantité de données"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La normalisation (ou standardisation) met toutes les features numériques à une échelle comparable, évitant que les features avec de grandes valeurs dominent l'entraînement.",
+    "ref": "Prétraitement des données – Microsoft Learn"
+  },
+  {
+    "id": 95,
+    "domain": "ML",
+    "question": "Quel est le rôle de la fonction de perte (loss function) dans l'entraînement d'un modèle ML ?",
+    "choices": [
+      "Stocker les poids du modèle",
+      "Mesurer l'écart entre les prédictions du modèle et les vraies valeurs, guidant l'optimisation",
+      "Visualiser les données",
+      "Déployer le modèle"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La fonction de perte quantifie l'erreur du modèle. L'algorithme d'optimisation (ex. gradient descent) ajuste les poids du modèle pour minimiser cette perte pendant l'entraînement.",
+    "ref": "Entraînement de modèles ML – Microsoft Learn"
+  },
+  {
+    "id": 96,
+    "domain": "ML",
+    "question": "Une entreprise de e-commerce veut recommander des produits similaires à ceux consultés par un utilisateur. Quel type de ML est utilisé ?",
+    "choices": [
+      "Classification supervisée",
+      "Filtrage collaboratif / Systèmes de recommandation",
+      "Détection d'anomalies",
+      "Régression linéaire"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les systèmes de recommandation utilisent des techniques comme le filtrage collaboratif (utilisateurs similaires) ou basé sur le contenu (produits similaires) pour personnaliser les suggestions.",
+    "ref": "Systèmes de recommandation – Microsoft Learn"
+  },
+  {
+    "id": 97,
+    "domain": "ML",
+    "question": "Quel service Azure ML permet de suivre automatiquement les expériences (paramètres, métriques, modèles) pour comparer différentes itérations d'entraînement ?",
+    "choices": [
+      "Azure Data Factory",
+      "MLflow / Azure ML Experiments",
+      "Azure Monitor",
+      "Azure DevOps"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure ML s'intègre avec MLflow pour tracker automatiquement les runs d'expériences : hyperparamètres, métriques (accuracy, loss), artefacts de modèle, permettant la comparaison des itérations.",
+    "ref": "MLflow – Azure Machine Learning – Microsoft Learn"
+  },
+  {
+    "id": 98,
+    "domain": "ML",
+    "question": "Qu'est-ce que la validation croisée (cross-validation) en ML ?",
+    "choices": [
+      "Valider un modèle sur un seul jeu de test",
+      "Une technique qui divise les données en k sous-ensembles et entraîne/valide le modèle k fois pour obtenir une estimation robuste de la performance",
+      "Une méthode de nettoyage des données",
+      "Un algorithme de clustering"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La validation croisée (k-fold) permet d'obtenir une estimation plus fiable de la performance en évitant le biais d'un seul découpage train/test, particulièrement utile avec peu de données.",
+    "ref": "Validation croisée – Microsoft Learn"
+  },
+  {
+    "id": 99,
+    "domain": "ML",
+    "question": "Quel est l'avantage principal d'Azure ML AutoML pour les équipes sans expertise en data science ?",
+    "choices": [
+      "Il génère automatiquement des données d'entraînement",
+      "Il automatise la sélection du meilleur algorithme et l'optimisation des hyperparamètres, rendant le ML accessible à tous",
+      "Il déploie automatiquement en production sans configuration",
+      "Il est toujours plus précis qu'un expert"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "AutoML démocratise le ML en automatisant les étapes les plus complexes (choix d'algorithme, feature engineering, tuning), permettant aux équipes sans expertise ML de créer des modèles performants.",
+    "ref": "AutoML – Azure Machine Learning – Microsoft Learn"
+  },
+  {
+    "id": 100,
+    "domain": "ML",
+    "question": "Quelle métrique utiliseriez-vous pour évaluer un modèle de régression prédit du prix immobilier ?",
+    "choices": [
+      "AUC-ROC",
+      "Précision (Accuracy)",
+      "Erreur quadratique moyenne (RMSE) ou MAE",
+      "F1-Score"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Pour la régression, on utilise RMSE (sensible aux grandes erreurs) ou MAE (erreur moyenne absolue). AUC-ROC, Accuracy et F1 sont pour la classification.",
+    "ref": "Évaluation de modèles de régression – Microsoft Learn"
+  },
+  {
+    "id": 101,
+    "domain": "ML",
+    "question": "Qu'est-ce qu'un hyperparamètre dans un modèle ML, par opposition à un paramètre ?",
+    "choices": [
+      "Un hyperparamètre est appris pendant l'entraînement, un paramètre est fixé manuellement",
+      "Un hyperparamètre est configuré avant l'entraînement (ex. taux d'apprentissage, nombre d'arbres), un paramètre est appris pendant l'entraînement (ex. poids)",
+      "Ils sont identiques",
+      "Un hyperparamètre est uniquement pour les réseaux de neurones"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les hyperparamètres (learning rate, max_depth, nombre d'epochs) sont définis avant l'entraînement et contrôlent le processus. Les paramètres (poids, biais) sont appris automatiquement pendant l'entraînement.",
+    "ref": "Hyperparamètres – Microsoft Learn"
+  },
+  {
+    "id": 102,
+    "domain": "ML",
+    "question": "Un modèle de détection de pannes industrielles doit être mis à jour chaque semaine avec les nouvelles données collectées. Quel composant Azure ML facilite cette automatisation ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure ML Pipelines planifiés",
+      "Azure Custom Vision",
+      "Azure Bot Service"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les pipelines Azure ML peuvent être planifiés (ex. déclenchement hebdomadaire) pour automatiser le ré-entraînement, la validation et le redéploiement des modèles avec les nouvelles données.",
+    "ref": "Pipelines planifiés – Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 103,
+    "domain": "ML",
+    "question": "Quelle est la différence entre un modèle de classification multi-classe et un modèle de classification binaire ?",
+    "choices": [
+      "La classification multi-classe est plus rapide",
+      "La classification binaire prédit l'une de deux classes (ex. spam/non-spam), la multi-classe prédit l'une de plusieurs classes (ex. chat/chien/oiseau)",
+      "Il n'y a aucune différence",
+      "La multi-classe nécessite moins de données"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Classification binaire = 2 classes (oui/non, fraude/normal). Classification multi-classe = 3+ classes (type d'animal, catégorie de produit, langue détectée).",
+    "ref": "Types de classification – Microsoft Learn"
+  },
+  {
+    "id": 104,
+    "domain": "ML",
+    "question": "Qu'est-ce que le concept de 'data drift' dans le monitoring de modèles ML en production ?",
+    "choices": [
+      "Une erreur de code dans le pipeline",
+      "Le phénomène où les données d'entrée en production changent de distribution par rapport aux données d'entraînement, dégradant les performances",
+      "Un bug dans l'API de déploiement",
+      "Une technique d'augmentation de données"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le data drift se produit quand les données réelles évoluent par rapport aux données d'entraînement (ex. comportements clients qui changent). Il faut monitorer et ré-entraîner régulièrement.",
+    "ref": "Monitoring de modèles – Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 105,
+    "domain": "ML",
+    "question": "Dans Azure ML, quelle est la différence entre un endpoint en temps réel et un endpoint de traitement par lot (batch) ?",
+    "choices": [
+      "Il n'y a aucune différence",
+      "Un endpoint temps réel répond en millisecondes à des requêtes individuelles, un endpoint batch traite de grands volumes de données de manière asynchrone",
+      "Un endpoint batch est toujours plus rapide",
+      "Les endpoints temps réel ne sont pas disponibles dans Azure ML"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les endpoints temps réel (real-time) sont pour des prédictions instantanées sur requête (APIs). Les endpoints batch sont pour traiter des millions d'éléments de manière planifiée et asynchrone.",
+    "ref": "Endpoints – Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 106,
+    "domain": "ML",
+    "question": "Quel algorithme ML est souvent utilisé pour détecter des anomalies dans des séries temporelles (ex. pics de consommation électrique) ?",
+    "choices": [
+      "Régression logistique",
+      "Isolation Forest ou autoencoders",
+      "K-means clustering",
+      "Classification naïve bayésienne"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Isolation Forest et les autoencoders sont des algorithmes couramment utilisés pour la détection d'anomalies dans les séries temporelles, car ils détectent les points atypiques sans nécessiter d'étiquettes.",
+    "ref": "Détection d'anomalies – Microsoft Learn"
+  },
+  {
+    "id": 107,
+    "domain": "ML",
+    "question": "Qu'est-ce que le concept de 'feature importance' dans un modèle ML ?",
+    "choices": [
+      "Le nombre de features utilisées",
+      "Une mesure indiquant quelle features contribuent le plus aux prédictions du modèle, aidant à l'interprétabilité",
+      "La vitesse d'entraînement",
+      "Le nombre d'exemples d'entraînement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La feature importance quantifie la contribution de chaque variable d'entrée aux prédictions du modèle. Elle permet de comprendre quelles features sont les plus influentes et d'améliorer l'explicabilité.",
+    "ref": "Interprétabilité – Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 108,
+    "domain": "ML",
+    "question": "Une startup veut prédire la demande journalière de ses produits pour les 30 prochains jours. Quel type de tâche ML est le plus approprié ?",
+    "choices": [
+      "Classification binaire",
+      "Prévision de séries temporelles (Time Series Forecasting)",
+      "Clustering",
+      "Détection d'anomalies"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La prévision de séries temporelles prédit des valeurs futures basées sur des données historiques avec une composante temporelle (saisonnalité, tendances). Azure ML AutoML supporte ce type de tâche.",
+    "ref": "Prévision de séries temporelles – Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 109,
+    "domain": "ML",
+    "question": "Quel outil Azure ML permet aux data scientists de collaborer sur des notebooks Jupyter directement dans le cloud sans configuration locale ?",
+    "choices": [
+      "Azure DevOps",
+      "Azure ML Studio Notebooks",
+      "Azure Data Factory",
+      "Azure Synapse Analytics"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure ML Studio propose un environnement Notebooks intégré permettant de coder en Python/R dans des notebooks Jupyter directement dans le navigateur, avec accès aux ressources de calcul Azure.",
+    "ref": "Notebooks – Azure Machine Learning – Microsoft Learn"
+  },
+  {
+    "id": 110,
+    "domain": "ML",
+    "question": "Qu'est-ce que le 'responsible ML' et comment Azure ML le supporte-t-il ?",
+    "choices": [
+      "Une certification Microsoft pour les data scientists",
+      "Un ensemble de pratiques pour créer des modèles ML équitables, fiables et explicables, supporté par le Responsible AI Dashboard dans Azure ML",
+      "Un type de déploiement sécurisé",
+      "Un algorithme spécifique"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le Responsible ML intègre équité, explicabilité et fiabilité dans le développement de modèles. Azure ML propose le Responsible AI Dashboard avec des outils comme Fairlearn, InterpretML et Error Analysis.",
+    "ref": "Responsible AI Dashboard – Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 111,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce qu'une hallucination dans le contexte des LLM ?",
+    "choices": [
+      "Une erreur de connexion au service",
+      "Quand un modèle génère des informations fausses ou inventées présentées avec confiance",
+      "Un effet visuel généré par DALL-E",
+      "Un type de fine-tuning"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les hallucinations sont des réponses incorrectes, inventées ou hors contexte générées par un LLM avec un apparent degré de confiance, représentant un risque majeur pour les applications critiques.",
+    "ref": "Hallucinations LLM – Microsoft Learn"
+  },
+  {
+    "id": 112,
+    "domain": "Generative AI",
+    "question": "Quel paramètre Azure OpenAI contrôle la longueur maximale de la réponse générée ?",
+    "choices": [
+      "Temperature",
+      "Top-P",
+      "Max tokens",
+      "Frequency penalty"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Max tokens définit le nombre maximum de tokens (mots/sous-mots) que le modèle peut générer dans sa réponse. Limiter ce paramètre contrôle la longueur et le coût des réponses.",
+    "ref": "Paramètres Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 113,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce que le 'grounding' dans le contexte de l'IA générative avec RAG ?",
+    "choices": [
+      "Une technique de fine-tuning",
+      "Ancrer les réponses du LLM dans des faits vérifiables issus d'une base documentaire pour réduire les hallucinations",
+      "Un type de prompt engineering",
+      "Un service Azure spécifique"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le grounding consiste à fournir au LLM des sources documentaires pertinentes (via RAG) pour que ses réponses soient basées sur des faits vérifiables plutôt que sur ses seules connaissances d'entraînement.",
+    "ref": "Grounding – Azure AI Foundry – Microsoft Learn"
+  },
+  {
+    "id": 114,
+    "domain": "Generative AI",
+    "question": "Quelle est la différence entre un modèle de base (foundation model) et un modèle fine-tuné ?",
+    "choices": [
+      "Un modèle de base est toujours plus précis",
+      "Un modèle de base est entraîné sur de vastes données générales, un modèle fine-tuné est adapté à un domaine ou tâche spécifique",
+      "Un modèle fine-tuné est plus grand",
+      "Il n'y a aucune différence"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les foundation models (GPT-4, Llama) sont entraînés sur d'immenses corpus généraux. Le fine-tuning spécialise ces modèles sur un domaine précis (médical, juridique, code) avec des données spécifiques.",
+    "ref": "Foundation models – Microsoft Learn"
+  },
+  {
+    "id": 115,
+    "domain": "Generative AI",
+    "question": "Azure AI Foundry (anciennement Azure AI Studio) est utilisé pour :",
+    "choices": [
+      "Gérer les factures Azure",
+      "Explorer, déployer et personnaliser des modèles d'IA générative, créer des applications IA end-to-end",
+      "Surveiller les performances réseau",
+      "Créer des bases de données relationnelles"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Foundry est le hub centralisé pour explorer les modèles (GPT, Llama, Mistral), créer des playgrounds, déployer des endpoints et construire des applications IA génératives.",
+    "ref": "Azure AI Foundry – Microsoft Learn"
+  },
+  {
+    "id": 116,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce que le 'system prompt' (ou system message) dans une conversation avec un LLM via Azure OpenAI ?",
+    "choices": [
+      "Le premier message de l'utilisateur",
+      "Des instructions données au modèle avant la conversation pour définir son comportement, rôle et contraintes",
+      "Le résumé de la conversation",
+      "Un paramètre de température"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le system prompt configure le comportement du LLM : ton, rôle, restrictions. Par exemple : 'Tu es un assistant juridique. Réponds uniquement aux questions légales en français et ne donne pas de conseil médical.'",
+    "ref": "System prompt – Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 117,
+    "domain": "Generative AI",
+    "question": "Quel modèle Azure OpenAI est spécialisé dans la génération d'images à partir de descriptions textuelles ?",
+    "choices": [
+      "GPT-4",
+      "DALL-E",
+      "Whisper",
+      "Ada"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "DALL-E est le modèle OpenAI disponible via Azure OpenAI Service spécialisé dans la génération d'images à partir de prompts textuels (text-to-image).",
+    "ref": "DALL-E – Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 118,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce que le 'prompt injection' et pourquoi est-ce un risque de sécurité pour les applications IA génératives ?",
+    "choices": [
+      "Une technique pour améliorer les prompts",
+      "Une attaque où un utilisateur malveillant insère des instructions dans son entrée pour manipuler le comportement du LLM et contourner ses garde-fous",
+      "Un type de fine-tuning",
+      "Un paramètre de déploiement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le prompt injection est une attaque où un utilisateur tente de faire ignorer au LLM ses instructions système en injectant des commandes dans sa requête, pouvant exposer des données sensibles ou contourner des restrictions.",
+    "ref": "Sécurité IA générative – Microsoft Learn"
+  },
+  {
+    "id": 119,
+    "domain": "Generative AI",
+    "question": "Quel modèle Azure OpenAI est optimisé pour la transcription audio en texte ?",
+    "choices": [
+      "DALL-E",
+      "GPT-4 Vision",
+      "Whisper",
+      "Ada"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Whisper est le modèle OpenAI disponible via Azure pour la transcription et la traduction automatique de fichiers audio en texte, avec une excellente précision sur de nombreuses langues.",
+    "ref": "Whisper – Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 120,
+    "domain": "Generative AI",
+    "question": "Une entreprise veut créer un copilote IA qui génère des rapports d'analyse en s'appuyant sur ses données internes. Quelle architecture Azure est recommandée ?",
+    "choices": [
+      "Azure Custom Vision",
+      "Azure OpenAI Service + Azure AI Search + Azure Blob Storage (architecture RAG)",
+      "Azure ML AutoML uniquement",
+      "Azure Bot Service sans LLM"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'architecture RAG avec Azure OpenAI (LLM), Azure AI Search (indexation/récupération) et Azure Blob Storage (stockage documentaire) est la référence pour des copilotes ancrés dans les données internes.",
+    "ref": "Architecture RAG – Azure AI Foundry – Microsoft Learn"
+  },
+  {
+    "id": 121,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce que le 'context window' (fenêtre de contexte) d'un LLM ?",
+    "choices": [
+      "La résolution d'affichage du modèle",
+      "Le nombre maximum de tokens que le modèle peut traiter en une seule requête (entrée + sortie combinées)",
+      "La durée maximale d'une session",
+      "La taille des embeddings"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La fenêtre de contexte définit combien de tokens le modèle peut 'voir' simultanément. Une fenêtre de 128k tokens (GPT-4) permet de traiter des documents très longs dans un seul appel.",
+    "ref": "Context window – Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 122,
+    "domain": "Generative AI",
+    "question": "Quel service Azure permet d'ajouter des garde-fous de contenu (content safety) directement dans une application Azure OpenAI ?",
+    "choices": [
+      "Azure Policy",
+      "Azure AI Content Safety (intégré ou API séparée)",
+      "Azure Monitor",
+      "Azure Defender"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Content Safety peut être intégré directement dans les applications Azure OpenAI pour filtrer les contenus nuisibles en entrée et en sortie selon des catégories configurables.",
+    "ref": "Azure AI Content Safety – Microsoft Learn"
+  },
+  {
+    "id": 123,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce que le 'few-shot prompting' ?",
+    "choices": [
+      "Un type de fine-tuning avec peu de données",
+      "Une technique de prompt engineering où l'on fournit quelques exemples dans le prompt pour guider le format et le style de réponse du LLM",
+      "Un paramètre de déploiement",
+      "Un algorithme d'optimisation"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le few-shot prompting consiste à inclure 2 à 5 exemples de paires question/réponse dans le prompt pour montrer au LLM le format ou style attendu, sans modifier les poids du modèle.",
+    "ref": "Prompt engineering – Microsoft Learn"
+  },
+  {
+    "id": 124,
+    "domain": "Generative AI",
+    "question": "Quel est le rôle des embeddings dans un système RAG ?",
+    "choices": [
+      "Générer des images",
+      "Transformer les documents et les requêtes en représentations vectorielles pour permettre la recherche sémantique par similarité",
+      "Filtrer les contenus inappropriés",
+      "Compresser les fichiers audio"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les embeddings convertissent textes et requêtes en vecteurs numériques. La recherche de similarité cosinus entre le vecteur de la requête et ceux des documents permet de retrouver les passages les plus pertinents.",
+    "ref": "Embeddings – Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 125,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce que Microsoft Copilot ?",
+    "choices": [
+      "Un service de stockage cloud",
+      "Une expérience IA générative intégrée dans les produits Microsoft (Microsoft 365, Windows, Bing) basée sur Azure OpenAI Service",
+      "Un langage de programmation",
+      "Un outil de gestion de bases de données"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Microsoft Copilot est l'assistant IA générative de Microsoft intégré dans Microsoft 365 (Word, Excel, Teams), Windows et Bing, alimenté par Azure OpenAI Service (GPT-4 et autres modèles).",
+    "ref": "Microsoft Copilot – Microsoft Learn"
+  },
+  {
+    "id": 126,
+    "domain": "Generative AI",
+    "question": "Pourquoi la gestion des tokens est-elle importante lors de l'utilisation d'Azure OpenAI Service ?",
+    "choices": [
+      "Elle détermine la résolution des images générées",
+      "Le coût et la performance sont directement liés au nombre de tokens traités (entrée + sortie)",
+      "Elle affecte uniquement la vitesse de connexion",
+      "Les tokens ne sont pas facturés"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure OpenAI Service facture à la consommation de tokens. Optimiser les prompts (concision, pertinence) et limiter max_tokens réduit les coûts et améliore les temps de réponse.",
+    "ref": "Tarification Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 127,
+    "domain": "Generative AI",
+    "question": "Quelle est la différence entre GPT-4 et GPT-4 Vision (GPT-4V) ?",
+    "choices": [
+      "GPT-4V est plus petit",
+      "GPT-4V peut analyser des images en entrée en plus du texte, GPT-4 standard ne traite que du texte",
+      "GPT-4V est uniquement pour la génération d'images",
+      "Il n'y a aucune différence"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "GPT-4 Vision (multimodal) accepte des images comme entrée en plus du texte, permettant d'analyser, décrire et raisonner sur des images. GPT-4 standard est uniquement text-to-text.",
+    "ref": "GPT-4 Vision – Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 128,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce que l'orchestration d'agents IA dans Azure AI Foundry ?",
+    "choices": [
+      "La gestion des factures Azure",
+      "La coordination de plusieurs agents IA spécialisés qui collaborent pour accomplir des tâches complexes en plusieurs étapes",
+      "Un type de fine-tuning",
+      "Un service de monitoring"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'orchestration d'agents permet de créer des systèmes multi-agents où chaque agent est spécialisé (recherche, calcul, rédaction) et collabore avec les autres pour accomplir des tâches complexes.",
+    "ref": "Agents IA – Azure AI Foundry – Microsoft Learn"
+  },
+  {
+    "id": 129,
+    "domain": "Generative AI",
+    "question": "Quel modèle Azure OpenAI est optimisé pour la génération et la compréhension de code ?",
+    "choices": [
+      "DALL-E",
+      "Whisper",
+      "GPT-4 / GPT-4o (avec capacités de coding)",
+      "Ada (embeddings uniquement)"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "GPT-4 et GPT-4o dans Azure OpenAI Service sont très performants pour la génération, l'explication et le débogage de code. Des modèles spécialisés comme Codex (base de GitHub Copilot) existent aussi.",
+    "ref": "Code generation – Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 130,
+    "domain": "Generative AI",
+    "question": "Qu'est-ce que le 'temperature = 0' signifie pour un LLM ?",
+    "choices": [
+      "Le modèle ne génère aucune réponse",
+      "Le modèle choisit toujours le token le plus probable, donnant des réponses déterministes et reproductibles",
+      "Le modèle est en mode maintenance",
+      "La réponse sera toujours aléatoire"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Temperature = 0 rend le LLM déterministe : il choisit toujours le token avec la probabilité la plus élevée. Idéal pour les tâches nécessitant précision et cohérence (classification, extraction de données).",
+    "ref": "Paramètres Azure OpenAI – Microsoft Learn"
+  },
+  {
+    "id": 131,
+    "domain": "Responsible AI",
+    "question": "Quel principe Responsible AI de Microsoft garantit que les données personnelles sont protégées et que les systèmes IA ne les exposent pas ?",
+    "choices": [
+      "Équité",
+      "Transparence",
+      "Confidentialité et sécurité",
+      "Responsabilité"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Le principe Confidentialité et sécurité (Privacy & Security) garantit que les systèmes IA respectent les lois sur la vie privée, protègent les données personnelles et résistent aux attaques.",
+    "ref": "Principes Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 132,
+    "domain": "Responsible AI",
+    "question": "Qu'est-ce que l'IA explicable (Explainable AI) ?",
+    "choices": [
+      "Une IA qui génère des explications textuelles créatives",
+      "Des techniques qui permettent de comprendre et d'interpréter comment un modèle IA prend ses décisions",
+      "Un type de chatbot",
+      "Un service Azure spécifique"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'IA explicable (XAI) développe des méthodes pour rendre les décisions des modèles IA compréhensibles pour les humains, en réponse au besoin de transparence et de confiance.",
+    "ref": "Explicabilité IA – Microsoft Learn"
+  },
+  {
+    "id": 133,
+    "domain": "Responsible AI",
+    "question": "Une IA médicale prédit des diagnostics mais les médecins ne comprennent pas comment elle arrive à ses conclusions. Quel principe Responsible AI est prioritairement concerné ?",
+    "choices": [
+      "Équité",
+      "Inclusivité",
+      "Transparence",
+      "Responsabilité"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "La transparence est critique dans le domaine médical : les professionnels de santé doivent comprendre le raisonnement de l'IA pour valider ses recommandations et maintenir leur responsabilité clinique.",
+    "ref": "Principes Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 134,
+    "domain": "Responsible AI",
+    "question": "Quel outil Microsoft open-source aide à mesurer et améliorer l'équité dans les modèles ML ?",
+    "choices": [
+      "Azure Monitor",
+      "Fairlearn",
+      "MLflow",
+      "Azure Policy"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Fairlearn est un toolkit open-source Microsoft qui fournit des métriques d'équité et des algorithmes de mitigation des biais pour évaluer et améliorer l'équité des modèles ML.",
+    "ref": "Fairlearn – Microsoft Learn"
+  },
+  {
+    "id": 135,
+    "domain": "Responsible AI",
+    "question": "Le principe d'inclusivité dans le Responsible AI de Microsoft signifie :",
+    "choices": [
+      "L'IA doit être uniquement en anglais",
+      "Les systèmes IA doivent être conçus pour bénéficier à tous, incluant les personnes handicapées et les groupes marginalisés",
+      "L'IA doit être open-source",
+      "Les modèles doivent inclure toutes les langues"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'inclusivité signifie que l'IA doit être conçue de manière à ne laisser personne de côté, en tenant compte de la diversité des utilisateurs (handicaps, cultures, niveaux d'alphabétisation, etc.).",
+    "ref": "Principes Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 136,
+    "domain": "Responsible AI",
+    "question": "Qu'est-ce que le biais algorithmique dans un modèle ML ?",
+    "choices": [
+      "Une erreur dans le code",
+      "Des erreurs systématiques dans les prédictions du modèle qui avantage ou désavantage injustement certains groupes, souvent dues aux données d'entraînement",
+      "Un problème de performance",
+      "Un type de sur-apprentissage"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le biais algorithmique survient quand les données d'entraînement reflètent des préjugés historiques ou sociaux, que le modèle apprend et amplifie, produisant des prédictions discriminatoires.",
+    "ref": "Biais algorithmique – Microsoft Learn"
+  },
+  {
+    "id": 137,
+    "domain": "Responsible AI",
+    "question": "Selon le cadre Responsible AI de Microsoft, qui est responsable des décisions prises par un système IA déployé ?",
+    "choices": [
+      "Uniquement l'algorithme lui-même",
+      "Les humains qui conçoivent, déploient et utilisent le système IA (principe d'Accountability)",
+      "Microsoft uniquement",
+      "Personne n'est responsable"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le principe d'Accountability (responsabilité) établit que les humains doivent conserver la responsabilité des systèmes IA : les concepteurs, les déployeurs et les utilisateurs ont des obligations envers l'impact du système.",
+    "ref": "Accountability – Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 138,
+    "domain": "Responsible AI",
+    "question": "Qu'est-ce que la 'human oversight' (supervision humaine) dans le contexte du Responsible AI ?",
+    "choices": [
+      "Remplacer complètement les décisions humaines par l'IA",
+      "Maintenir des mécanismes permettant aux humains de surveiller, corriger et si nécessaire désactiver les systèmes IA",
+      "Utiliser l'IA uniquement pour surveiller les humains",
+      "Un type de prompt engineering"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La supervision humaine garantit que les systèmes IA restent sous contrôle humain, avec des mécanismes pour détecter les erreurs, corriger les comportements non désirés et intervenir si nécessaire.",
+    "ref": "Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 139,
+    "domain": "Responsible AI",
+    "question": "Une application de prêt bancaire utilise un modèle ML qui refuse systématiquement les demandes provenant de certains codes postaux historiquement défavorisés. Quel problème Responsible AI illustre ce scénario ?",
+    "choices": [
+      "Manque de transparence uniquement",
+      "Biais algorithmique et violation du principe d'équité",
+      "Problème de performance",
+      "Manque de données"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Ce scénario illustre le biais de proxy : le code postal devient un proxy pour la race ou le statut socio-économique, créant une discrimination indirecte et violant le principe d'équité.",
+    "ref": "Équité – Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 140,
+    "domain": "Responsible AI",
+    "question": "Quel document Microsoft formalise les engagements de Microsoft concernant le développement responsable de l'IA ?",
+    "choices": [
+      "Azure SLA",
+      "Microsoft Responsible AI Standard",
+      "Azure Security Benchmark",
+      "Microsoft Privacy Statement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le Microsoft Responsible AI Standard est un document public qui définit les exigences et pratiques que Microsoft s'engage à suivre pour développer l'IA de manière responsable.",
+    "ref": "Microsoft Responsible AI Standard – Microsoft Learn"
+  },
+  {
+    "id": 141,
+    "domain": "Responsible AI",
+    "question": "Pourquoi est-il important d'évaluer l'équité d'un modèle ML sur différents sous-groupes de la population ?",
+    "choices": [
+      "Pour augmenter la précision globale",
+      "Parce qu'un modèle peut avoir une bonne performance globale mais être significativement moins précis pour certains groupes, créant une discrimination injuste",
+      "Pour réduire les coûts de calcul",
+      "Pour améliorer la vitesse du modèle"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Une précision globale élevée peut masquer des performances très inégales entre sous-groupes. Un modèle de reconnaissance faciale précis à 95% globalement peut n'être précis qu'à 70% pour les femmes à peau foncée.",
+    "ref": "Évaluation de l'équité – Fairlearn – Microsoft Learn"
+  },
+  {
+    "id": 142,
+    "domain": "Responsible AI",
+    "question": "Qu'est-ce que le principe de 'privacy by design' appliqué à l'IA ?",
+    "choices": [
+      "Concevoir l'interface utilisateur pour être belle",
+      "Intégrer la protection de la vie privée dès la conception du système IA, plutôt que de l'ajouter après",
+      "Un service Azure spécifique",
+      "Un type de chiffrement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Privacy by design signifie que la protection des données est intégrée dans l'architecture du système dès le départ : minimisation des données, anonymisation, chiffrement, contrôles d'accès.",
+    "ref": "Confidentialité – Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 143,
+    "domain": "Responsible AI",
+    "question": "Quel risque Responsible AI est spécifiquement lié aux systèmes d'IA générative ?",
+    "choices": [
+      "Sur-apprentissage uniquement",
+      "Génération de désinformation, deepfakes, contenu nuisible et violations de droits d'auteur",
+      "Lenteur de traitement",
+      "Coûts élevés uniquement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les LLM et modèles génératifs créent de nouveaux risques : hallucinations présentées comme des faits, génération de deepfakes, contenu potentiellement nuisible et reproduction de contenu protégé.",
+    "ref": "Responsible AI générative – Microsoft Learn"
+  },
+  {
+    "id": 144,
+    "domain": "Responsible AI",
+    "question": "Comment Azure AI Content Safety contribue-t-il au Responsible AI ?",
+    "choices": [
+      "En accélérant les inférences du modèle",
+      "En détectant et filtrant automatiquement les contenus nuisibles (haine, violence, sexuel, automutilation) dans les entrées/sorties des modèles IA",
+      "En réduisant les coûts de stockage",
+      "En améliorant la précision des modèles"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Content Safety implémente concrètement le principe de sécurité du Responsible AI en fournissant des garde-fous automatiques contre la génération ou le traitement de contenus nuisibles.",
+    "ref": "Azure AI Content Safety – Microsoft Learn"
+  },
+  {
+    "id": 145,
+    "domain": "Responsible AI",
+    "question": "Quel est l'impact potentiel d'un système de reconnaissance faciale biaisé déployé dans un contexte judiciaire ?",
+    "choices": [
+      "Aucun impact car les humains vérifient toujours",
+      "Des faux positifs disproportionnés pour certains groupes ethniques pouvant mener à des arrestations injustes, violant équité et droits fondamentaux",
+      "Un impact uniquement sur les performances",
+      "Un impact uniquement économique"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Des études ont montré que certains systèmes de reconnaissance faciale ont des taux d'erreur beaucoup plus élevés pour les femmes et les personnes à peau foncée, pouvant mener à de graves injustices dans le contexte judiciaire.",
+    "ref": "Équité – Azure AI Face – Microsoft Learn"
+  },
+  {
+    "id": 146,
+    "domain": "Responsible AI",
+    "question": "Quelle pratique Responsible AI consiste à tester intentionnellement un système IA avec des inputs adversariaux pour trouver ses failles ?",
+    "choices": [
+      "Fine-tuning",
+      "Red teaming IA",
+      "Data augmentation",
+      "Feature engineering"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le red teaming IA consiste à faire attaquer intentionnellement un système IA par une équipe dédiée pour identifier les vulnérabilités, comportements non désirés et risques avant le déploiement.",
+    "ref": "Red teaming IA – Microsoft Learn"
+  },
+  {
+    "id": 147,
+    "domain": "Responsible AI",
+    "question": "Qu'est-ce que la 'model card' dans le contexte du Responsible AI ?",
+    "choices": [
+      "Une carte de crédit pour payer les services Azure",
+      "Un document qui décrit les performances, limites, utilisations prévues et biais connus d'un modèle ML, favorisant la transparence",
+      "Un type de prompt",
+      "Un dashboard de monitoring"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Une model card est une fiche de documentation standardisée accompagnant un modèle ML, décrivant son contexte d'entraînement, ses performances par sous-groupe, ses limites et les usages recommandés.",
+    "ref": "Model cards – Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 148,
+    "domain": "Responsible AI",
+    "question": "Pourquoi la conformité RGPD est-elle importante dans le déploiement de systèmes IA en Europe ?",
+    "choices": [
+      "Elle n'a aucun lien avec l'IA",
+      "Le RGPD impose des obligations sur le traitement des données personnelles utilisées pour entraîner ou exploiter des modèles IA, incluant le droit à l'explication des décisions automatisées",
+      "Elle concerne uniquement les réseaux sociaux",
+      "Elle est optionnelle pour les entreprises tech"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le RGPD impose des règles strictes sur les données personnelles (consentement, droit à l'effacement, portabilité) et l'article 22 encadre les décisions automatisées, directement applicable aux systèmes IA.",
+    "ref": "RGPD et IA – Microsoft Learn"
+  },
+  {
+    "id": 149,
+    "domain": "Responsible AI",
+    "question": "Quelle est la différence entre l'équité procédurale et l'équité de résultat dans le contexte de l'IA ?",
+    "choices": [
+      "Elles sont identiques",
+      "L'équité procédurale garantit que le processus de décision est équitable, l'équité de résultat garantit que les outcomes sont équitables entre groupes",
+      "L'équité procédurale est plus importante",
+      "L'équité de résultat n'est pas pertinente en IA"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'équité procédurale se concentre sur la transparence et la cohérence du processus décisionnel. L'équité de résultat vérifie que les taux d'acceptation/refus sont comparables entre groupes démographiques.",
+    "ref": "Équité – Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 150,
+    "domain": "Responsible AI",
+    "question": "Quel service Azure aide les organisations à gouverner et documenter leurs systèmes IA dans le respect des réglementations (EU AI Act, etc.) ?",
+    "choices": [
+      "Azure DevOps",
+      "Azure AI Foundry Model Catalog + Responsible AI Dashboard",
+      "Azure Blob Storage",
+      "Azure Functions"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure AI Foundry et le Responsible AI Dashboard permettent de documenter, évaluer et gouverner les modèles IA, facilitant la conformité aux réglementations émergentes comme l'EU AI Act.",
+    "ref": "Gouvernance IA – Azure AI Foundry – Microsoft Learn"
+  }
+]
