@@ -2409,5 +2409,489 @@
     ],
     "explanation": "Azure AI Foundry et le Responsible AI Dashboard permettent de documenter, évaluer et gouverner les modèles IA, facilitant la conformité aux réglementations émergentes comme l'EU AI Act.",
     "ref": "Gouvernance IA – Azure AI Foundry – Microsoft Learn"
+  },
+  {
+    "id": 151,
+    "domain": "AI Workloads",
+    "question": "Une entreprise souhaite utiliser l'IA pour prédire la demande de ses produits en fonction des données historiques de ventes. Quel type de workload IA cela représente-t-il ?",
+    "choices": [
+      "IA conversationnelle",
+      "ML prédictif (régression/prévision)",
+      "Vision par ordinateur",
+      "IA générative"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La prédiction de demande à partir de données historiques est un workload de ML prédictif, typiquement de la prévision de séries temporelles (time series forecasting).",
+    "ref": "Workloads IA prédictifs – Microsoft Learn"
+  },
+  {
+    "id": 152,
+    "domain": "AI Workloads",
+    "question": "Quelle est la différence principale entre une IA faible (narrow AI) et une IA générale (AGI) ?",
+    "choices": [
+      "L'IA faible est plus puissante que l'AGI",
+      "L'IA faible est conçue pour une tâche spécifique, l'AGI peut réaliser n'importe quelle tâche intellectuelle comme un humain",
+      "L'IA faible utilise plus de données",
+      "Il n'y a aucune différence"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'IA faible (narrow AI) excelle dans un domaine précis (jeu d'échecs, détection de fraude). L'AGI (Artificial General Intelligence) désigne une IA hypothétique capable de raisonner sur n'importe quel domaine comme un humain.",
+    "ref": "Concepts fondamentaux de l'IA – Microsoft Learn"
+  },
+  {
+    "id": 153,
+    "domain": "AI Workloads",
+    "question": "Une plateforme de streaming musical veut recommander des chansons à ses utilisateurs en analysant leurs écoutes passées. Quel type de workload IA est utilisé ?",
+    "choices": [
+      "Vision par ordinateur",
+      "NLP",
+      "Système de recommandation (ML non supervisé/collaboratif)",
+      "IA conversationnelle"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Les systèmes de recommandation analysent les comportements passés (filtrage collaboratif) ou les caractéristiques des contenus (filtrage basé contenu) pour suggérer des items pertinents.",
+    "ref": "Workloads IA – Systèmes de recommandation – Microsoft Learn"
+  },
+  {
+    "id": 154,
+    "domain": "AI Workloads",
+    "question": "Quel service Azure est utilisé pour détecter des anomalies dans des séries temporelles de métriques système (ex. pics de CPU anormaux) ?",
+    "choices": [
+      "Azure AI Language",
+      "Azure Anomaly Detector",
+      "Azure Custom Vision",
+      "Azure Bot Service"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Azure Anomaly Detector est un service cognitif dédié à la détection d'anomalies dans des séries temporelles, sans nécessiter d'expertise ML.",
+    "ref": "Azure Anomaly Detector – Microsoft Learn"
+  },
+  {
+    "id": 155,
+    "domain": "AI Workloads",
+    "question": "Quels deux scénarios sont des exemples de workloads de détection d'anomalies ? Chaque réponse correcte présente une solution complète.",
+    "choices": [
+      "Traduire un document en 10 langues",
+      "Détecter des transactions bancaires frauduleuses en temps réel",
+      "Générer des images à partir de descriptions",
+      "Identifier des pannes machines imminentes via des capteurs IoT"
+    ],
+    "answers": [
+      1,
+      3
+    ],
+    "explanation": "La détection de fraude bancaire et la maintenance prédictive via capteurs IoT sont deux workloads classiques de détection d'anomalies. La traduction est du NLP, la génération d'images est de l'IA générative.",
+    "ref": "Détection d'anomalies – Microsoft Learn"
+  },
+  {
+    "id": 156,
+    "domain": "AI Workloads",
+    "question": "Une application de navigation GPS prédit les embouteillages en temps réel. Quel type de workload IA est impliqué ?",
+    "choices": [
+      "IA conversationnelle",
+      "Vision par ordinateur",
+      "ML prédictif (classification/régression)",
+      "IA générative"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "La prédiction d'embouteillages à partir de données historiques et en temps réel (vitesse, volume de trafic) est un workload de ML prédictif basé sur la régression ou la classification.",
+    "ref": "ML prédictif – Workloads IA – Microsoft Learn"
+  },
+  {
+    "id": 157,
+    "domain": "AI Workloads",
+    "question": "Quelle est la caractéristique principale d'un workload d'IA conversationnelle ?",
+    "choices": [
+      "Il analyse uniquement des images",
+      "Il permet des interactions en langage naturel entre humains et machines via des chatbots ou assistants vocaux",
+      "Il prédit des valeurs numériques",
+      "Il génère uniquement des images"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'IA conversationnelle (chatbots, assistants vocaux) permet des échanges en langage naturel. Elle combine souvent NLP (compréhension), dialogue management et parfois Speech.",
+    "ref": "IA conversationnelle – Microsoft Learn"
+  },
+  {
+    "id": 158,
+    "domain": "AI Workloads",
+    "question": "Un système industriel utilise des capteurs pour prédire la défaillance d'une machine avant qu'elle ne tombe en panne. Comment appelle-t-on ce type de workload ?",
+    "choices": [
+      "IA générative",
+      "Maintenance prédictive (ML + détection d'anomalies)",
+      "Vision par ordinateur",
+      "IA conversationnelle"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La maintenance prédictive combine ML et détection d'anomalies pour anticiper les pannes en analysant les données de capteurs (température, vibration, pression) avant la défaillance.",
+    "ref": "Maintenance prédictive – Workloads IA – Microsoft Learn"
+  },
+  {
+    "id": 159,
+    "domain": "AI Workloads",
+    "question": "Quels deux éléments sont des considérations éthiques importantes lors du déploiement d'un workload IA en production ?",
+    "choices": [
+      "Maximiser uniquement la précision du modèle",
+      "S'assurer que le modèle ne présente pas de biais discriminatoires envers des groupes",
+      "Utiliser le plus de données possible sans restriction",
+      "Garantir la transparence sur comment les décisions IA sont prises"
+    ],
+    "answers": [
+      1,
+      3
+    ],
+    "explanation": "Les considérations éthiques incluent l'équité (pas de biais discriminatoires) et la transparence (explicabilité des décisions). Ce sont des principes fondamentaux du Responsible AI Microsoft.",
+    "ref": "Responsible AI – Workloads IA – Microsoft Learn"
+  },
+  {
+    "id": 160,
+    "domain": "AI Workloads",
+    "question": "Une compagnie d'assurance veut automatiquement évaluer les dommages d'un véhicule accidenté à partir de photos. Quels types de workloads IA sont combinés ?",
+    "choices": [
+      "NLP + IA conversationnelle",
+      "Vision par ordinateur + ML prédictif",
+      "IA générative uniquement",
+      "Détection d'anomalies uniquement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'évaluation de dommages combine la vision par ordinateur (analyse des photos de dommages) et le ML prédictif (estimation du coût de réparation) pour automatiser le processus.",
+    "ref": "Workloads IA Vision + ML – Microsoft Learn"
+  },
+  {
+    "id": 161,
+    "domain": "AI Workloads",
+    "question": "Qu'est-ce que le machine learning automatisé (AutoML) apporte principalement aux équipes sans expertise en data science ?",
+    "choices": [
+      "Il génère automatiquement des données d'entraînement",
+      "Il automatise la sélection du meilleur algorithme et l'optimisation des hyperparamètres",
+      "Il déploie automatiquement en production sans aucune configuration",
+      "Il remplace totalement les data scientists"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "AutoML démocratise le ML en automatisant les étapes les plus complexes : choix d'algorithme, feature engineering, tuning, permettant aux équipes métier de créer des modèles performants sans expertise ML.",
+    "ref": "AutoML – Azure Machine Learning – Microsoft Learn"
+  },
+  {
+    "id": 162,
+    "domain": "AI Workloads",
+    "question": "Quel type de workload IA est utilisé lorsqu'un assistant vocal répond aux questions des employés sur les politiques RH de l'entreprise ?",
+    "choices": [
+      "Vision par ordinateur",
+      "Détection d'anomalies",
+      "IA conversationnelle + Question Answering",
+      "ML prédictif"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "Un assistant vocal répondant aux questions RH combine l'IA conversationnelle (interaction en langage naturel), la reconnaissance vocale (Speech-to-Text) et le Question Answering (base de connaissances).",
+    "ref": "IA conversationnelle – Azure Bot Service – Microsoft Learn"
+  },
+  {
+    "id": 163,
+    "domain": "AI Workloads",
+    "question": "Une application de santé analyse des données de capteurs (fréquence cardiaque, tension) pour alerter si un patient est en danger. Quel type de workload IA cela représente-t-il ?",
+    "choices": [
+      "NLP",
+      "Détection d'anomalies en temps réel",
+      "IA générative",
+      "Vision par ordinateur"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La surveillance de paramètres vitaux pour détecter des situations anormales est un workload de détection d'anomalies en temps réel appliqué aux séries temporelles de données médicales.",
+    "ref": "Détection d'anomalies – Azure AI – Microsoft Learn"
+  },
+  {
+    "id": 164,
+    "domain": "AI Workloads",
+    "question": "Lequel de ces scénarios n'est PAS un exemple approprié d'utilisation de l'IA ?",
+    "choices": [
+      "Classer automatiquement des emails en spam/non-spam",
+      "Prendre des décisions judiciaires définitives sans supervision humaine",
+      "Recommander des produits personnalisés à des clients",
+      "Détecter des fraudes bancaires en temps réel"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Les décisions judiciaires définitives ne doivent pas être prises par l'IA sans supervision humaine – c'est une violation du principe d'Accountability du Responsible AI. L'IA peut assister, pas décider seule.",
+    "ref": "Workloads IA appropriés – Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 165,
+    "domain": "AI Workloads",
+    "question": "Quel est le rôle d'un modèle IA dans un workload de classification d'images médicales (ex. détection de cancer) ?",
+    "choices": [
+      "Remplacer complètement le diagnostic médecin",
+      "Assister le médecin en signalant les anomalies détectées pour validation humaine",
+      "Générer des rapports médicaux complets autonomement",
+      "Traduire les résultats en plusieurs langues"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Dans le domaine médical, l'IA assiste le professionnel de santé en signalant les anomalies détectées. La décision finale reste humaine, conformément aux principes de Responsible AI (accountability, fiabilité).",
+    "ref": "Workloads IA santé – Responsible AI – Microsoft Learn"
+  },
+  {
+    "id": 166,
+    "domain": "AI Workloads",
+    "question": "Quelle est la différence entre l'apprentissage supervisé et non supervisé dans le contexte des workloads IA ?",
+    "choices": [
+      "L'apprentissage supervisé est toujours plus rapide",
+      "L'apprentissage supervisé utilise des données étiquetées (ex. classification), le non supervisé découvre des patterns sans étiquettes (ex. clustering)",
+      "L'apprentissage non supervisé nécessite plus de données étiquetées",
+      "Il n'y a aucune différence pratique"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Supervisé = données avec étiquettes connues (spam/non-spam, chat/chien). Non supervisé = l'algorithme découvre seul des structures cachées dans les données (clustering clients, détection d'anomalies).",
+    "ref": "Types de ML – Workloads IA – Microsoft Learn"
+  },
+  {
+    "id": 167,
+    "domain": "AI Workloads",
+    "question": "Un retailer veut analyser les avis clients pour comprendre pourquoi ses produits reçoivent des notes basses. Quel workload IA est le plus adapté ?",
+    "choices": [
+      "Vision par ordinateur",
+      "NLP – Analyse de sentiment + Opinion Mining",
+      "Détection d'anomalies",
+      "IA générative uniquement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'analyse des avis clients pour identifier les aspects négatifs (livraison, qualité, service) et le sentiment associé est un workload NLP combinant analyse de sentiment et Opinion Mining (Azure AI Language).",
+    "ref": "NLP – Workloads IA – Microsoft Learn"
+  },
+  {
+    "id": 168,
+    "domain": "AI Workloads",
+    "question": "Quels deux facteurs sont essentiels pour choisir d'utiliser l'IA plutôt qu'un algorithme classique pour résoudre un problème ?",
+    "choices": [
+      "Le problème implique des règles explicites simples et claires",
+      "Le problème est trop complexe pour être résolu par des règles manuelles explicites",
+      "Des données d'entraînement suffisantes et de qualité sont disponibles",
+      "Le budget est illimité"
+    ],
+    "answers": [
+      1,
+      2
+    ],
+    "explanation": "L'IA est pertinente quand : (1) le problème est trop complexe pour des règles manuelles (ex. reconnaissance d'images), et (2) des données suffisantes existent pour l'entraînement. Sans données, pas de ML.",
+    "ref": "Quand utiliser l'IA – Workloads IA – Microsoft Learn"
+  },
+  {
+    "id": 169,
+    "domain": "AI Workloads",
+    "question": "Une entreprise de logistique veut optimiser ses itinéraires de livraison en tenant compte du trafic, de la météo et des contraintes clients. Quel type de workload IA est le plus adapté ?",
+    "choices": [
+      "Vision par ordinateur",
+      "IA conversationnelle",
+      "Apprentissage par renforcement / ML d'optimisation",
+      "IA générative"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "L'optimisation d'itinéraires avec des contraintes dynamiques multiples est un problème d'optimisation combinatoire, souvent résolu par l'apprentissage par renforcement ou des algorithmes de ML d'optimisation.",
+    "ref": "Apprentissage par renforcement – Workloads IA – Microsoft Learn"
+  },
+  {
+    "id": 170,
+    "domain": "AI Workloads",
+    "question": "Qu'est-ce que l'inférence dans le contexte d'un workload IA en production ?",
+    "choices": [
+      "L'étape d'entraînement d'un modèle ML",
+      "L'utilisation d'un modèle entraîné pour générer des prédictions sur de nouvelles données",
+      "La collecte de données d'entraînement",
+      "L'évaluation des métriques du modèle"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'inférence est la phase de production où le modèle entraîné reçoit de nouvelles données et génère des prédictions. C'est distinct de l'entraînement qui ajuste les poids du modèle.",
+    "ref": "Déploiement et inférence – Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 171,
+    "domain": "AI Workloads",
+    "question": "Quel type de workload IA permettrait d'automatiser la lecture et la saisie de données à partir de milliers de formulaires papier numérisés ?",
+    "choices": [
+      "IA conversationnelle",
+      "Vision par ordinateur + OCR (Document Intelligence)",
+      "Apprentissage par renforcement",
+      "Clustering non supervisé"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La lecture et extraction de données depuis des formulaires numérisés combine la vision par ordinateur (analyse d'image) et l'OCR/Document Intelligence (extraction structurée de champs).",
+    "ref": "Document Intelligence – Workloads Vision – Microsoft Learn"
+  },
+  {
+    "id": 172,
+    "domain": "AI Workloads",
+    "question": "Un service de streaming vidéo veut classer automatiquement ses contenus par genre (action, comédie, documentaire) à partir des descriptions textuelles. Quel workload IA utiliser ?",
+    "choices": [
+      "Vision par ordinateur",
+      "NLP – Classification de texte",
+      "Détection d'anomalies",
+      "IA générative uniquement"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Classer des descriptions textuelles en catégories prédéfinies est un workload de classification de texte (NLP), réalisable avec Azure AI Language Custom Text Classification.",
+    "ref": "Classification de texte – Azure AI Language – Microsoft Learn"
+  },
+  {
+    "id": 173,
+    "domain": "AI Workloads",
+    "question": "Quelle est la principale limite d'un modèle de ML entraîné sur des données historiques lorsqu'il est déployé en production ?",
+    "choices": [
+      "Il est trop rapide",
+      "Il peut se dégrader si les données réelles évoluent (data drift) par rapport aux données d'entraînement",
+      "Il nécessite trop de RAM",
+      "Il ne peut pas être mis à jour"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le data drift survient quand la distribution des données en production change par rapport aux données d'entraînement, dégradant les performances. Il faut monitorer et ré-entraîner régulièrement.",
+    "ref": "Data drift – Monitoring Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 174,
+    "domain": "AI Workloads",
+    "question": "Une ville veut analyser des images de caméras de surveillance pour détecter des incidents (accidents, foules anormales) en temps réel. Quels workloads IA sont impliqués ?",
+    "choices": [
+      "NLP + IA conversationnelle",
+      "Vision par ordinateur (détection d'objets + analyse spatiale) + détection d'anomalies",
+      "IA générative uniquement",
+      "ML prédictif sur données tabulaires"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La surveillance urbaine combine la vision par ordinateur (détection d'objets, analyse spatiale Azure AI Vision) et la détection d'anomalies pour identifier les situations inhabituelles en temps réel.",
+    "ref": "Vision par ordinateur – Azure AI Vision – Microsoft Learn"
+  },
+  {
+    "id": 175,
+    "domain": "AI Workloads",
+    "question": "Qu'est-ce que le concept de 'responsible AI by design' signifie lors de la conception d'un workload IA ?",
+    "choices": [
+      "Ajouter des contrôles de sécurité uniquement après le déploiement",
+      "Intégrer les principes Responsible AI (équité, transparence, sécurité) dès la phase de conception du workload",
+      "Utiliser uniquement des données open source",
+      "Automatiser toutes les décisions sans intervention humaine"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Responsible AI by design signifie intégrer les principes (équité, transparence, confidentialité, fiabilité) dès la conception plutôt que de les ajouter après coup, pour des systèmes plus sûrs et éthiques.",
+    "ref": "Responsible AI – Workloads IA – Microsoft Learn"
+  },
+  {
+    "id": 176,
+    "domain": "AI Workloads",
+    "question": "Quel workload IA est utilisé dans les applications de traduction simultanée lors de conférences internationales ?",
+    "choices": [
+      "Vision par ordinateur",
+      "NLP – Speech Translation (Azure AI Speech)",
+      "ML prédictif",
+      "Détection d'anomalies"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "La traduction simultanée en temps réel est un workload de Speech Translation dans Azure AI Speech, qui transcrit et traduit la parole instantanément d'une langue à une autre.",
+    "ref": "Speech Translation – Azure AI Speech – Microsoft Learn"
+  },
+  {
+    "id": 177,
+    "domain": "AI Workloads",
+    "question": "Une application RH utilise l'IA pour analyser les CV et présélectionner automatiquement les candidats. Quelle considération Responsible AI est critique ici ?",
+    "choices": [
+      "La vitesse de traitement des CV",
+      "S'assurer que le modèle ne discrimine pas selon le sexe, l'âge ou l'origine ethnique (équité)",
+      "Le coût du stockage des CV",
+      "La compatibilité des formats de fichiers"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "L'analyse automatisée de CV présente un risque majeur de biais discriminatoires. Le principe d'équité (Fairness) du Responsible AI exige que le système traite tous les candidats sans discrimination.",
+    "ref": "Équité – Responsible AI – Workloads RH – Microsoft Learn"
+  },
+  {
+    "id": 178,
+    "domain": "AI Workloads",
+    "question": "Qu'est-ce que le concept de 'feature engineering' dans le développement d'un workload ML ?",
+    "choices": [
+      "L'étape de déploiement du modèle",
+      "Le processus de sélection, transformation et création de variables d'entrée pertinentes pour améliorer les performances du modèle",
+      "L'évaluation finale du modèle",
+      "La collecte de données brutes"
+    ],
+    "answers": [
+      1
+    ],
+    "explanation": "Le feature engineering consiste à transformer les données brutes en variables (features) pertinentes et informatives pour le modèle : normalisation, encodage, agrégations, création de nouvelles variables.",
+    "ref": "Feature engineering – Azure ML – Microsoft Learn"
+  },
+  {
+    "id": 179,
+    "domain": "AI Workloads",
+    "question": "Quel type de workload IA permettrait à un robot aspirateur de naviguer automatiquement dans une maison en évitant les obstacles ?",
+    "choices": [
+      "NLP",
+      "IA générative",
+      "Vision par ordinateur + Apprentissage par renforcement",
+      "Classification de texte"
+    ],
+    "answers": [
+      2
+    ],
+    "explanation": "La navigation autonome d'un robot combine la vision par ordinateur (perception de l'environnement, détection d'obstacles) et l'apprentissage par renforcement (apprentissage de la stratégie de déplacement optimale).",
+    "ref": "Robotique IA – Workloads – Microsoft Learn"
+  },
+  {
+    "id": 180,
+    "domain": "AI Workloads",
+    "question": "Quels deux services Azure sont les plus adaptés pour construire un workload complet de détection d'anomalies sur des données IoT en temps réel ?",
+    "choices": [
+      "Azure Custom Vision",
+      "Azure Anomaly Detector",
+      "Azure AI Language",
+      "Azure Stream Analytics"
+    ],
+    "answers": [
+      1,
+      3
+    ],
+    "explanation": "Azure Anomaly Detector détecte les anomalies dans les séries temporelles. Azure Stream Analytics traite les flux de données IoT en temps réel. Ensemble, ils forment un pipeline de détection d'anomalies en temps réel.",
+    "ref": "Azure Anomaly Detector + Stream Analytics – Microsoft Learn"
   }
 ]
