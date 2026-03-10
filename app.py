@@ -202,6 +202,7 @@ if not st.session_state.started:
     gen_difficulty = st.select_slider("Difficulté", ["Facile", "Moyen", "Difficile"], value="Moyen")
 
     if st.button("⚡ Générer une question", use_container_width=True):
+        st.session_state.generated_q = None
         with st.spinner("Mistral génère une question…"):
             prompt = f"""Génère une question QCM de niveau {gen_difficulty} sur le domaine "{gen_domain}" pour la certification Microsoft AI-900.
 Format JSON strict :
