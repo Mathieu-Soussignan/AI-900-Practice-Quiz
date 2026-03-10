@@ -1,2 +1,2 @@
 streamlit
-supabase
+supabasemistralai>=1.0.0
