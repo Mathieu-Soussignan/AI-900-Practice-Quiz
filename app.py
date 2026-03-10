@@ -157,7 +157,7 @@ for k, v in DEFAULTS.items():
 def reset_quiz(keep_settings=True):
     for k in ["idx","score","answers","domain_scores","done",
               "hint","hint_idx","ai_explanation","ai_explanation_idx",
-              "coach_report","generated_q","exam_start_ts",
+              "coach_report","exam_start_ts",
               "debate_idx","debate_text","debate_response"]:
         st.session_state[k] = DEFAULTS[k]
     if not keep_settings:
