@@ -145,7 +145,7 @@ DEFAULTS = {
     "domain": "Tous les domaines", "username": "", "nb": 15,
     "hint": None, "hint_idx": -1,
     "ai_explanation": None, "ai_explanation_idx": -1,
-    "coach_report": None, "generated_q": None,
+    "coach_report": None,
     "mode": "practice",  # "practice" | "exam"
     "exam_start_ts": None,
     "debate_idx": -1, "debate_text": None, "debate_response": None,
@@ -328,49 +328,12 @@ if not st.session_state.started:
 
     st.markdown("")
     disabled = not st.session_state.username.strip()
-    label = "🚀 Lancer le quiz" if st.session_state.mode == "practice" else "⏱ Démarrer l'examen"
+    label = "Lancer le quiz" if st.session_state.mode == "practice" else "⏱ Démarrer l'examen"
     if st.button(label, type="primary", use_container_width=True, disabled=disabled):
         start_quiz()
         st.rerun()
     if disabled:
         st.caption("⬆️ Entre ton prénom pour commencer")
-
-    # Générateur Mistral
-    st.divider()
-    st.markdown("### ✨ Génère une question Mistral AI")
-    st.caption("Mistral crée une question inédite sur le domaine de ton choix.")
-    gen_col1, gen_col2 = st.columns(2)
-    with gen_col1:
-        gen_domain = st.selectbox("Domaine", [d for d in DOMAINS if d != "Tous les domaines"], key="gen_domain")
-    with gen_col2:
-        gen_difficulty = st.select_slider("Difficulté", ["Facile", "Moyen", "Difficile"], value="Moyen")
-
-    if st.button("⚡ Générer une question", use_container_width=True):
-        st.session_state.generated_q = None
-        with st.spinner("Mistral génère une question…"):
-            prompt = f"""Génère une question QCM de niveau {gen_difficulty} sur le domaine "{gen_domain}" pour la certification Microsoft AI-900.
-Format JSON strict :
-{{"question": "...","choices": ["A. ...","B. ...","C. ...","D. ..."],"answer_index": 0,"explanation": "..."}}
-Réponds UNIQUEMENT avec le JSON, sans markdown, sans texte autour."""
-            raw = mistral_chat(prompt, system="Tu es un expert Microsoft Azure AI certifié. Tu génères des QCM précis et pédagogiques en français.")
-            try:
-                clean = raw.strip().lstrip("```json").lstrip("```").rstrip("```").strip()
-                st.session_state.generated_q = json.loads(clean)
-            except Exception:
-                st.session_state.generated_q = {"error": raw}
-
-    if st.session_state.generated_q:
-        gq = st.session_state.generated_q
-        if "error" in gq:
-            st.error(f"Parsing échoué : {gq['error']}")
-        else:
-            st.markdown(f"**{gq['question']}**")
-            for c in gq["choices"]:
-                st.markdown(f"- {c}")
-            with st.expander("Voir la réponse"):
-                ans_idx = gq.get("answer_index", 0)
-                st.success(f"✅ {gq['choices'][ans_idx]}")
-                st.info(f"💡 {gq['explanation']}")
 
     # Leaderboard
     lb = get_leaderboard()
