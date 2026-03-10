@@ -1,5 +1,5 @@
 import streamlit as st
-import random, json, os
+import random, json, os, time
 from datetime import datetime
 
 # ── Supabase ──────────────────────────────────────────────────────────────────
@@ -69,6 +69,20 @@ st.markdown("""
     letter-spacing: 0.08em;
     margin-bottom: 8px;
   }
+  .timer-ok { font-size: 1.4em; font-weight: 800; color: #107C10; }
+  .timer-warn { font-size: 1.4em; font-weight: 800; color: #FFB900; }
+  .timer-danger { font-size: 1.4em; font-weight: 800; color: #D13438; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+  .exam-banner {
+    background: linear-gradient(90deg, #1a1a2e, #2d1b69);
+    border: 2px solid #8764B8;
+    border-radius: 12px;
+    padding: 10px 18px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 </style>
 """, unsafe_allow_html=True)
 
@@ -76,16 +90,14 @@ DOMAIN_COLORS = {
     "Vision": "#0078D4", "NLP": "#107C10", "ML": "#FFB900",
     "Generative AI": "#8764B8", "Responsible AI": "#D13438", "AI Workloads": "#00B7C3"
 }
+EXAM_DURATION = 45 * 60  # 45 minutes en secondes
 
 def badge(domain):
     color = DOMAIN_COLORS.get(domain, "#555")
     return f"<span class='domain-badge' style='background:{color}'>{domain}</span>"
 
-def ai_box(content: str, header: str = "✨ MISTRAL AI"):
-    st.markdown(
-        f"<div class='ai-box'><div class='ai-header'>{header}</div>{content}</div>",
-        unsafe_allow_html=True
-    )
+def ai_box(content, header="✨ MISTRAL AI"):
+    st.markdown(f"<div class='ai-box'><div class='ai-header'>{header}</div>{content}</div>", unsafe_allow_html=True)
 
 # ── Data ──────────────────────────────────────────────────────────────────────
 @st.cache_data(ttl=3600, show_spinner="Chargement des questions…")
@@ -100,7 +112,7 @@ def load_questions():
     with open("questions.json", encoding="utf-8") as f:
         return json.load(f)
 
-def save_result(username, score, total, domain_scores):
+def save_result(username, score, total, domain_scores, mode="practice"):
     if not supabase:
         return
     try:
@@ -108,6 +120,7 @@ def save_result(username, score, total, domain_scores):
             "username": username, "score": score, "total": total,
             "percentage": round(score / total * 100),
             "domain_scores": json.dumps(domain_scores),
+            "mode": mode,
             "created_at": datetime.utcnow().isoformat()
         }).execute()
     except Exception as e:
@@ -132,15 +145,20 @@ DEFAULTS = {
     "domain": "Tous les domaines", "username": "", "nb": 15,
     "hint": None, "hint_idx": -1,
     "ai_explanation": None, "ai_explanation_idx": -1,
-    "coach_report": None,
-    "generated_q": None,
+    "coach_report": None, "generated_q": None,
+    "mode": "practice",  # "practice" | "exam"
+    "exam_start_ts": None,
+    "debate_idx": -1, "debate_text": None, "debate_response": None,
 }
 for k, v in DEFAULTS.items():
     if k not in st.session_state:
         st.session_state[k] = v
 
 def reset_quiz(keep_settings=True):
-    for k in ["idx","score","answers","domain_scores","done","hint","hint_idx","ai_explanation","ai_explanation_idx","coach_report","generated_q"]:
+    for k in ["idx","score","answers","domain_scores","done",
+              "hint","hint_idx","ai_explanation","ai_explanation_idx",
+              "coach_report","generated_q","exam_start_ts",
+              "debate_idx","debate_text","debate_response"]:
         st.session_state[k] = DEFAULTS[k]
     if not keep_settings:
         st.session_state.started = False
@@ -153,8 +171,109 @@ def start_quiz():
         st.error("Aucune question disponible pour ce domaine.")
         return
     reset_quiz()
-    st.session_state.questions = random.sample(pool, min(st.session_state.nb, len(pool)))
+    nb = st.session_state.nb if st.session_state.mode == "practice" else min(40, len(pool))
+    st.session_state.questions = random.sample(pool, min(nb, len(pool)))
     st.session_state.started = True
+    if st.session_state.mode == "exam":
+        st.session_state.exam_start_ts = time.time()
+
+# ── Radar chart ───────────────────────────────────────────────────────────────
+def render_radar(domain_scores: dict, title: str = "Performance par domaine"):
+    import plotly.graph_objects as go
+
+    all_domains = list(DOMAIN_COLORS.keys())
+    values = []
+    for d in all_domains:
+        if d in domain_scores:
+            data = domain_scores[d]
+            values.append(round(data["correct"] / data["total"] * 100))
+        else:
+            values.append(0)
+
+    # Fermer le polygone
+    cats = all_domains + [all_domains[0]]
+    vals = values + [values[0]]
+
+    fig = go.Figure()
+
+    # Zone de passage (80%)
+    fig.add_trace(go.Scatterpolar(
+        r=[80] * (len(all_domains) + 1),
+        theta=cats,
+        fill="toself",
+        fillcolor="rgba(16, 124, 16, 0.08)",
+        line=dict(color="rgba(16,124,16,0.4)", dash="dash", width=1),
+        name="Objectif 80%",
+        hoverinfo="skip"
+    ))
+
+    # Score utilisateur
+    fig.add_trace(go.Scatterpolar(
+        r=vals,
+        theta=cats,
+        fill="toself",
+        fillcolor="rgba(135, 100, 184, 0.25)",
+        line=dict(color="#8764B8", width=3),
+        marker=dict(size=8, color="#8764B8"),
+        name="Ton score",
+    ))
+
+    fig.update_layout(
+        polar=dict(
+            radialaxis=dict(
+                visible=True, range=[0, 100],
+                ticksuffix="%", tickfont=dict(size=11),
+                gridcolor="rgba(255,255,255,0.1)",
+                linecolor="rgba(255,255,255,0.1)",
+            ),
+            angularaxis=dict(
+                tickfont=dict(size=12, color="white"),
+                gridcolor="rgba(255,255,255,0.15)",
+            ),
+            bgcolor="rgba(26,26,46,0.8)",
+        ),
+        paper_bgcolor="rgba(26,26,46,1)",
+        plot_bgcolor="rgba(26,26,46,1)",
+        font=dict(color="white"),
+        title=dict(text=title, font=dict(size=16, color="white"), x=0.5),
+        legend=dict(
+            orientation="h", y=-0.15, x=0.5, xanchor="center",
+            font=dict(color="white", size=11)
+        ),
+        margin=dict(t=60, b=40, l=40, r=40),
+        height=420,
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+# ── Timer ─────────────────────────────────────────────────────────────────────
+def render_timer():
+    if st.session_state.exam_start_ts is None:
+        return False
+    elapsed = time.time() - st.session_state.exam_start_ts
+    remaining = EXAM_DURATION - elapsed
+    if remaining <= 0:
+        return True  # Temps écoulé
+
+    mins = int(remaining // 60)
+    secs = int(remaining % 60)
+    label = f"{mins:02d}:{secs:02d}"
+
+    if remaining > 600:
+        css_class = "timer-ok"
+    elif remaining > 300:
+        css_class = "timer-warn"
+    else:
+        css_class = "timer-danger"
+
+    st.markdown(
+        f"<div class='exam-banner'>"
+        f"<span style='color:#b39ddb;font-weight:700'>⏱ MODE EXAMEN</span>"
+        f"<span class='{css_class}'>{label}</span>"
+        f"<span style='color:#888;font-size:0.85em'>{st.session_state.score}/{st.session_state.idx} pts</span>"
+        f"</div>",
+        unsafe_allow_html=True
+    )
+    return False
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # PAGE : ACCUEIL
@@ -179,39 +298,59 @@ if not st.session_state.started:
         st.session_state.domain = st.selectbox("🎯 Domaine", DOMAINS,
             index=DOMAINS.index(st.session_state.domain) if st.session_state.domain in DOMAINS else 0)
 
-    st.session_state.nb = st.slider("📝 Nombre de questions", 5, min(30, len(QUESTIONS)), st.session_state.nb)
+    # Mode selector
+    st.markdown("#### Mode de quiz")
+    mode_col1, mode_col2 = st.columns(2)
+    with mode_col1:
+        practice_selected = st.session_state.mode == "practice"
+        if st.button(
+            "📝 Mode Pratique" + (" ✓" if practice_selected else ""),
+            use_container_width=True,
+            type="primary" if practice_selected else "secondary"
+        ):
+            st.session_state.mode = "practice"
+            st.rerun()
+    with mode_col2:
+        exam_selected = st.session_state.mode == "exam"
+        if st.button(
+            "⏱ Mode Examen" + (" ✓" if exam_selected else ""),
+            use_container_width=True,
+            type="primary" if exam_selected else "secondary"
+        ):
+            st.session_state.mode = "exam"
+            st.rerun()
 
-    if st.session_state.domain != "Tous les domaines":
-        n = sum(1 for q in QUESTIONS if q["domain"] == st.session_state.domain)
-        st.markdown(f"{badge(st.session_state.domain)} **{n} questions** disponibles", unsafe_allow_html=True)
+    if st.session_state.mode == "practice":
+        st.session_state.nb = st.slider("📝 Nombre de questions", 5, min(30, len(QUESTIONS)), st.session_state.nb)
+        st.caption("✅ Feedback immédiat après chaque réponse + indices Mistral disponibles")
+    else:
+        st.info("⏱ **40 questions · 45 minutes · Pas de feedback pendant l'examen** — Résultats et radar chart à la fin.")
 
     st.markdown("")
     disabled = not st.session_state.username.strip()
-    if st.button("🚀 Lancer le quiz", type="primary", use_container_width=True, disabled=disabled):
+    label = "🚀 Lancer le quiz" if st.session_state.mode == "practice" else "⏱ Démarrer l'examen"
+    if st.button(label, type="primary", use_container_width=True, disabled=disabled):
         start_quiz()
         st.rerun()
     if disabled:
         st.caption("⬆️ Entre ton prénom pour commencer")
 
-    # ── Brique Mistral 3 : Génération de question à la volée ──────────────────
+    # Générateur Mistral
     st.divider()
     st.markdown("### ✨ Génère une question Mistral AI")
-    st.caption("Mistral crée une question inédite sur le domaine de ton choix — hors bank officielle.")
-
-    gen_domain = st.selectbox("Domaine", [d for d in DOMAINS if d != "Tous les domaines"], key="gen_domain")
-    gen_difficulty = st.select_slider("Difficulté", ["Facile", "Moyen", "Difficile"], value="Moyen")
+    st.caption("Mistral crée une question inédite sur le domaine de ton choix.")
+    gen_col1, gen_col2 = st.columns(2)
+    with gen_col1:
+        gen_domain = st.selectbox("Domaine", [d for d in DOMAINS if d != "Tous les domaines"], key="gen_domain")
+    with gen_col2:
+        gen_difficulty = st.select_slider("Difficulté", ["Facile", "Moyen", "Difficile"], value="Moyen")
 
     if st.button("⚡ Générer une question", use_container_width=True):
         st.session_state.generated_q = None
         with st.spinner("Mistral génère une question…"):
             prompt = f"""Génère une question QCM de niveau {gen_difficulty} sur le domaine "{gen_domain}" pour la certification Microsoft AI-900.
 Format JSON strict :
-{{
-  "question": "...",
-  "choices": ["A. ...", "B. ...", "C. ...", "D. ..."],
-  "answer_index": 0,
-  "explanation": "..."
-}}
+{{"question": "...","choices": ["A. ...","B. ...","C. ...","D. ..."],"answer_index": 0,"explanation": "..."}}
 Réponds UNIQUEMENT avec le JSON, sans markdown, sans texte autour."""
             raw = mistral_chat(prompt, system="Tu es un expert Microsoft Azure AI certifié. Tu génères des QCM précis et pédagogiques en français.")
             try:
@@ -243,8 +382,9 @@ Réponds UNIQUEMENT avec le JSON, sans markdown, sans texte autour."""
             icon = medals[i] if i < 3 else f"**{i+1}.**"
             pct = row.get("percentage", 0)
             bar_color = "#107C10" if pct >= 80 else "#FFB900" if pct >= 60 else "#D13438"
+            mode_tag = f" `{row.get('mode','')}` " if row.get("mode") == "exam" else " "
             st.markdown(
-                f"{icon} **{row['username']}** — "
+                f"{icon} **{row['username']}**{mode_tag}— "
                 f"<span style='color:{bar_color};font-weight:700'>{pct}%</span> "
                 f"<span style='color:#888;font-size:0.85em'>({row['score']}/{row['total']})</span>",
                 unsafe_allow_html=True
@@ -264,39 +404,49 @@ elif not st.session_state.done:
     q = questions[idx]
     total = len(questions)
     multi = len(q["answers"]) > 1
+    is_exam = st.session_state.mode == "exam"
 
-    col_prog, col_score = st.columns([3, 1])
-    with col_prog:
-        st.markdown(f"<p style='font-size:0.82em;color:#888'>Question {idx+1} sur {total}</p>", unsafe_allow_html=True)
-        st.progress(idx / total)
-    with col_score:
-        st.metric("Score", f"{st.session_state.score}/{idx}")
+    # Timer exam + auto-submit si temps écoulé
+    if is_exam:
+        time_up = render_timer()
+        if time_up:
+            st.warning("⏰ Temps écoulé ! Fin de l'examen.")
+            st.session_state.done = True
+            save_result(st.session_state.username, st.session_state.score, total, st.session_state.domain_scores, mode="exam")
+            get_leaderboard.clear()
+            st.rerun()
+        # Auto-refresh toutes les secondes en mode exam
+        time.sleep(1)
+        st.rerun() if idx in st.session_state.answers else None
+    else:
+        col_prog, col_score = st.columns([3, 1])
+        with col_prog:
+            st.markdown(f"<p style='font-size:0.82em;color:#888'>Question {idx+1} sur {total}</p>", unsafe_allow_html=True)
+            st.progress(idx / total)
+        with col_score:
+            st.metric("Score", f"{st.session_state.score}/{idx}")
 
     st.markdown(badge(q["domain"]), unsafe_allow_html=True)
     st.markdown(f"### {q['question']}")
-
     if multi:
         st.info("✏️ Plusieurs bonnes réponses — cochez toutes les bonnes.")
 
     answered = idx in st.session_state.answers
 
     if not answered:
-        # ── Brique Mistral 1 : Indice dynamique ───────────────────────────────
-        col_hint, _ = st.columns([1, 3])
-        with col_hint:
+        # Indice Mistral (mode pratique uniquement)
+        if not is_exam:
             if st.button("💡 Indice Mistral", key=f"hint_btn_{idx}"):
                 if st.session_state.hint_idx != idx:
                     with st.spinner("Mistral réfléchit…"):
                         prompt = f"""Question AI-900 : "{q['question']}"
 Choix : {json.dumps(q['choices'], ensure_ascii=False)}
-Donne un indice court (2-3 phrases max) qui aide à trouver la bonne réponse SANS la révéler directement. Reste orienté Azure."""
-                        st.session_state.hint = mistral_chat(prompt, system="Tu es un formateur Microsoft Azure bienveillant. Tu donnes des indices pédagogiques sans spoiler.")
+Donne un indice court (2-3 phrases max) qui aide à trouver la bonne réponse SANS la révéler. Reste orienté Azure."""
+                        st.session_state.hint = mistral_chat(prompt, system="Tu es un formateur Microsoft Azure bienveillant.")
                         st.session_state.hint_idx = idx
-
-        if st.session_state.hint and st.session_state.hint_idx == idx:
-            ai_box(st.session_state.hint, "💡 INDICE MISTRAL")
-
-        st.markdown("")
+            if st.session_state.hint and st.session_state.hint_idx == idx:
+                ai_box(st.session_state.hint, "💡 INDICE MISTRAL")
+            st.markdown("")
 
         if multi:
             selected = [i for i, c in enumerate(q["choices"]) if st.checkbox(c, key=f"cb{idx}_{i}")]
@@ -317,95 +467,111 @@ Donne un indice court (2-3 phrases max) qui aide à trouver la bonne réponse SA
             if correct:
                 ds[dom]["correct"] += 1
             st.session_state.hint = None
+
+            # En mode exam : question suivante automatique
+            if is_exam:
+                if idx < total - 1:
+                    st.session_state.idx += 1
+                else:
+                    st.session_state.done = True
+                    save_result(st.session_state.username, st.session_state.score, total, st.session_state.domain_scores, mode="exam")
+                    get_leaderboard.clear()
             st.rerun()
 
     else:
-        res = st.session_state.answers[idx]
-        if res["correct"]:
-            st.success("✅ Bonne réponse !")
-        else:
-            correct_labels = " / ".join(f"**{q['choices'][i]}**" for i in q["answers"])
-            st.error(f"❌ Incorrect — Bonne(s) réponse(s) : {correct_labels}")
+        # Mode pratique : feedback immédiat
+        if not is_exam:
+            res = st.session_state.answers[idx]
+            if res["correct"]:
+                st.success("✅ Bonne réponse !")
+            else:
+                correct_labels = " / ".join(f"**{q['choices'][i]}**" for i in q["answers"])
+                st.error(f"❌ Incorrect — Bonne(s) réponse(s) : {correct_labels}")
 
-        # Explication standard
-        with st.expander("📚 Explication officielle", expanded=True):
-            st.write(q["explanation"])
-            st.caption(f"📖 {q['ref']}")
+            with st.expander("📚 Explication officielle", expanded=True):
+                st.write(q["explanation"])
+                st.caption(f"📖 {q['ref']}")
 
-        # ── Brique Mistral 2 : Explication enrichie ───────────────────────────
-        if not res["correct"]:
-            if st.button("🧠 Explication approfondie par Mistral", key=f"explain_btn_{idx}"):
-                if st.session_state.ai_explanation_idx != idx:
-                    with st.spinner("Mistral prépare une explication…"):
-                        correct_ans = [q["choices"][i] for i in q["answers"]]
-                        prompt = f"""Question AI-900 : "{q['question']}"
+            # Explication enrichie Mistral
+            if not res["correct"]:
+                if st.button("🧠 Explication approfondie Mistral", key=f"explain_btn_{idx}"):
+                    if st.session_state.ai_explanation_idx != idx:
+                        with st.spinner("Mistral prépare une explication…"):
+                            correct_ans = [q["choices"][i] for i in q["answers"]]
+                            prompt = f"""Question AI-900 : "{q['question']}"
 Bonne réponse : {correct_ans}
 Explication officielle : {q['explanation']}
+Enrichis avec : 1) une analogie concrète 2) un exemple Azure réel 3) un moyen mnémotechnique.
+Réponds en français, de façon engageante."""
+                            st.session_state.ai_explanation = mistral_chat(prompt, system="Tu es un expert Azure certifié et formateur passionné.")
+                            st.session_state.ai_explanation_idx = idx
 
-Enrichis cette explication en 3-4 phrases avec :
-1. Une analogie concrète du quotidien
-2. Un exemple d'utilisation réelle sur Azure
-3. Un moyen mnémotechnique pour retenir la bonne réponse
-Réponds en français, de façon pédagogique et engageante."""
-                        st.session_state.ai_explanation = mistral_chat(
-                            prompt,
-                            system="Tu es un expert Azure certifié et formateur passionné. Tu expliques avec des analogies concrètes et du storytelling."
-                        )
-                        st.session_state.ai_explanation_idx = idx
+                if st.session_state.ai_explanation and st.session_state.ai_explanation_idx == idx:
+                    ai_box(st.session_state.ai_explanation.replace("\n", "<br>"), "🧠 EXPLICATION MISTRAL AI")
 
-            if st.session_state.ai_explanation and st.session_state.ai_explanation_idx == idx:
-                ai_box(st.session_state.ai_explanation.replace("\n", "<br>"), "🧠 EXPLICATION MISTRAL AI")
-
-        st.markdown("")
-        if idx < total - 1:
-            if st.button("➡️ Question suivante", type="primary", use_container_width=True):
-                st.session_state.idx += 1
-                st.session_state.ai_explanation = None
-                st.rerun()
-        else:
-            if st.button("🏁 Voir mes résultats", type="primary", use_container_width=True):
-                st.session_state.done = True
-                save_result(st.session_state.username, st.session_state.score, total, st.session_state.domain_scores)
-                get_leaderboard.clear()
-                st.rerun()
+            st.markdown("")
+            if idx < total - 1:
+                if st.button("➡️ Question suivante", type="primary", use_container_width=True):
+                    st.session_state.idx += 1
+                    st.session_state.ai_explanation = None
+                    st.rerun()
+            else:
+                if st.button("🏁 Voir mes résultats", type="primary", use_container_width=True):
+                    st.session_state.done = True
+                    save_result(st.session_state.username, st.session_state.score, total, st.session_state.domain_scores, mode="practice")
+                    get_leaderboard.clear()
+                    st.rerun()
 
     with st.sidebar:
         st.markdown(f"👤 **{st.session_state.username}**")
+        mode_label = "⏱ Examen" if is_exam else "📝 Pratique"
+        st.markdown(f"🎮 {mode_label}")
         st.markdown(f"🎯 `{st.session_state.domain}`")
-        st.markdown(f"📊 **{st.session_state.score}/{idx}**")
+        if not is_exam:
+            st.markdown(f"📊 **{st.session_state.score}/{idx}**")
         st.divider()
         if st.button("🏠 Quitter", use_container_width=True):
             reset_quiz(keep_settings=False)
             st.rerun()
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# PAGE : RÉSULTATS + COACH MISTRAL
+# PAGE : RÉSULTATS
 # ═══════════════════════════════════════════════════════════════════════════════
 else:
     total = len(st.session_state.questions)
     score = st.session_state.score
     pct = round(score / total * 100)
+    is_exam = st.session_state.mode == "exam"
+
+    if is_exam:
+        st.markdown("## ⏱ Résultats — Mode Examen")
+    else:
+        st.markdown("## 📊 Résultats")
 
     if pct >= 80:
         st.balloons()
-        st.success(f"## 🎉 Excellent ! {score}/{total} — {pct}%")
-        st.markdown("Tu es prêt(e) pour l'examen AI-900 !")
+        st.success(f"🎉 **Excellent ! {score}/{total} — {pct}%** — Tu es prêt(e) pour l'examen !")
     elif pct >= 60:
-        st.warning(f"## 💪 Pas mal ! {score}/{total} — {pct}%")
-        st.markdown("Encore un peu de révision sur les domaines faibles.")
+        st.warning(f"💪 **Pas mal ! {score}/{total} — {pct}%** — Encore un peu de révision.")
     else:
-        st.error(f"## 📚 {score}/{total} — {pct}%")
-        st.markdown("Continue à réviser, tu vas y arriver !")
+        st.error(f"📚 **{score}/{total} — {pct}%** — Continue, tu vas y arriver !")
 
     st.divider()
 
-    # Résultats par domaine
-    st.subheader("📊 Performance par domaine")
+    # ── RADAR CHART ───────────────────────────────────────────────────────────
+    if st.session_state.domain_scores:
+        render_radar(st.session_state.domain_scores,
+                     title=f"Radar de performance — {st.session_state.username}")
+        st.caption("La zone verte indique l'objectif de 80% recommandé pour chaque domaine.")
+
+    st.divider()
+
+    # Détail par domaine
+    st.subheader("Performance par domaine")
     domain_summary = []
     for dom, data in sorted(st.session_state.domain_scores.items()):
         p = round(data["correct"] / data["total"] * 100)
         domain_summary.append({"domain": dom, "pct": p, "correct": data["correct"], "total": data["total"]})
-        color = DOMAIN_COLORS.get(dom, "#555")
         icon = "✅" if p >= 70 else "⚠️" if p >= 50 else "❌"
         col_b, col_stat = st.columns([3, 1])
         with col_b:
@@ -416,27 +582,24 @@ else:
 
     st.divider()
 
-    # ── Brique Mistral 3 : Coach personnalisé ─────────────────────────────────
+    # ── COACH MISTRAL ─────────────────────────────────────────────────────────
     st.subheader("🎓 Coach IA personnalisé")
     if st.button("✨ Générer mon plan de révision Mistral", type="primary", use_container_width=True):
-        with st.spinner("Mistral analyse tes résultats et prépare ton plan…"):
+        with st.spinner("Mistral analyse tes résultats…"):
             results_str = "\n".join([f"- {d['domain']} : {d['correct']}/{d['total']} ({d['pct']}%)" for d in domain_summary])
-            prompt = f"""Un étudiant prépare la certification Microsoft AI-900.
-Prénom : {st.session_state.username}
+            mode_ctx = "en mode examen simulé (sans feedback)" if is_exam else "en mode pratique"
+            prompt = f"""Étudiant : {st.session_state.username}
+Mode : {mode_ctx}
 Score global : {pct}% ({score}/{total})
 Résultats par domaine :
 {results_str}
 
 Génère un plan de révision personnalisé et motivant en français avec :
-1. Un diagnostic rapide de son niveau actuel (2-3 phrases)
-2. Les 2-3 domaines prioritaires à réviser avec pour chacun : pourquoi c'est important + 2 ressources Microsoft Learn spécifiques
-3. Un planning concret sur 2 jours pour atteindre 80%+
-4. Un message de motivation personnalisé pour {st.session_state.username}
-Sois précis, concret et encourageant."""
-            st.session_state.coach_report = mistral_chat(
-                prompt,
-                system="Tu es un coach expert en certifications Microsoft Azure, bienveillant et motivant. Tu donnes des conseils actionnables et personnalisés."
-            )
+1. Diagnostic rapide (2-3 phrases)
+2. Les 2-3 domaines prioritaires avec ressources Microsoft Learn spécifiques
+3. Planning concret sur 2 jours pour atteindre 80%+
+4. Message de motivation personnalisé pour {st.session_state.username}"""
+            st.session_state.coach_report = mistral_chat(prompt, system="Tu es un coach expert certifications Microsoft Azure, bienveillant et précis.")
 
     if st.session_state.coach_report:
         ai_box(st.session_state.coach_report.replace("\n", "<br>"), "🎓 TON COACH MISTRAL AI")
@@ -450,11 +613,11 @@ Sois précis, concret et encourageant."""
             start_quiz()
             st.rerun()
     with c2:
-        weak_domains = [d["domain"] for d in domain_summary if d["pct"] < 70]
-        if weak_domains:
+        if domain_summary:
             worst = min(domain_summary, key=lambda d: d["pct"])["domain"]
             if st.button(f"🎯 Cibler : {worst}", use_container_width=True):
                 st.session_state.domain = worst
+                st.session_state.mode = "practice"
                 st.session_state.nb = 15
                 start_quiz()
                 st.rerun()
