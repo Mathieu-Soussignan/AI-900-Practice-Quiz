@@ -1,2 +1,3 @@
-streamlit
-supabasemistralai>=1.0.0
+streamlit>=1.32.0
+supabase>=2.3.0
+mistralai>=1.0.0
